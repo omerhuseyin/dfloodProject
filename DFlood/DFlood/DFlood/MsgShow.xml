@@ -1,0 +1,171 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MsgShow
+</name>
+</assembly>
+<members>
+<member name="T:ShowMessage.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources._Error">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Close">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Close1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.DroidSansArabic">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Error1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.facebook">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.gmail">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.GOTHIC">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.GOTHICB">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Info">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Info1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Question">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Success">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Success1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Warning">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowMessage.My.Resources.Resources.Warning1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:ShowMessage.ShowMessage.MsgShow(System.String,ShowMessage.MsgLanguage)">
+ <summary>
+ Draggable Custom Message Dialogs with animated icons, waits for the user to click a button, Arabic Style.
+ </summary>
+ <param name="MsgText">Required. String expression displayed as message in the dialog box</param>
+ <returns>DialogResult</returns>
+</member>
+<member name="M:ShowMessage.ShowMessage.MsgShow(System.String,System.String)">
+ <summary>
+ Custom Message Dialogs with Bottom_Left location
+ </summary>
+ <param name="MsgText">Required. String expression displayed as message in the dialog box</param>
+ <param name="MsgTitle">Required. String expression displayed in the title bar of the dialog box.</param>
+</member>
+<member name="M:ShowMessage.ShowMessage.MsgShow(System.String,ShowMessage.MsgType,ShowMessage.MsgLanguage)">
+ <summary>
+ Draggable Custom Message Dialogs with animated icons, waits for the user to click a button, Arabic Style.
+ </summary>
+ <param name="MsgText">Required. String expression displayed as message in the dialog box</param>
+ <param name="MsgType">Required. Message Type to display. the icon style, Example: information,Success,Critical,...etc</param>
+ <returns>DialogResult</returns>
+</member>
+<member name="M:ShowMessage.ShowMessage.MsgShow(System.String,ShowMessage.MsgType,System.String)">
+ <summary>
+ Custom Message Dialogs with multiple message Type, Bottom_Left location, and Arabic Style 
+ </summary>
+ <param name="MsgText">Required. String expression displayed as message in the dialog box</param>
+ <param name="MsgTitle">Required. String expression displayed in the title bar of the dialog box.</param>
+ <param name="MsgType">Required. Message Type to display. the icon style, Example: information,Success,Critical,...etc</param>
+</member>
+<member name="M:ShowMessage.ShowMessage.MsgShow(System.String,ShowMessage.MsgType,ShowMessage.MsgButton)">
+ <summary>
+ Draggable Custom Message Dialogs with animated icons, waits for the user to click a button, Arabic Style. 
+ </summary>
+ <param name="MsgText">Required. String expression displayed as message in the dialog box</param>
+ <param name="MsgType">Required. Message Type to display. the icon style, Example: information,Success,Critical,...etc</param>
+ <param name="MsgButton">Required. Type of buttons to display. If you omit MsgButton, the default value is OkOnly.</param>
+ <returns>DialogResult</returns>
+</member>
+<member name="M:ShowMessage.ShowMessage.MsgShow(System.String,ShowMessage.MsgType,ShowMessage.MsgButton,ShowMessage.MsgLanguage)">
+ <summary>
+ Draggable Custom Message Dialogs with animated icons, waits for the user to click a button.
+ </summary>
+ <param name="MsgText">Required. String expression displayed as message in the dialog box</param>
+ <param name="MsgType">Required. Message Type to display. the icon style, Example: information,Success,Critical,...etc</param>
+ <param name="MsgButton">Required. Type of buttons to display. If you omit MsgButton, the default value is OkOnly.</param>
+ <param name="MsgLanguage">Required. button language and message layout direction. If you omit MsgLanguage, the default value is Arabic</param>
+ <returns>DialogResult</returns>
+</member>
+<member name="M:ShowMessage.ShowMessage.MsgShow(System.String,ShowMessage.MsgType,System.String,ShowMessage.MsgLocation)">
+ <summary>
+ Custom Message Dialogs with the possibility to change the location of the message 
+ </summary>
+ <param name="MsgText">Required. String expression displayed as message in the dialog box</param>
+ <param name="MsgType">Required. Message Type to display. the icon style, Example: information,Success,Critical,...etc</param>
+ <param name="MsgTitle">Required. String expression displayed in the title bar of the dialog box.</param>
+ <param name="MsgLocation">
+ Required. The location where the message is to be displayed. Example: Top_Right,Bottom_Center,...etc. If you omit MsgLocation, the default location is Bottom_Left. 
+ </param>
+</member>
+<member name="M:ShowMessage.ShowMessage.About_MsgShow">
+ <summary>
+ About Custom Message Dialogs. Programmed By: Eng Iyad Shaqura
+ </summary>
+</member>
+</members>
+</doc>
