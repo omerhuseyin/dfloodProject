@@ -1,7 +1,7 @@
 ﻿
 namespace DFlood
 {
-    partial class cheat
+    partial class main
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,11 @@ namespace DFlood
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cheat));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.formMover = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOwO = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
+            this.btnAbout = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,9 +43,7 @@ namespace DFlood
             this.elipseForm = new Guna.UI.WinForms.GunaElipse(this.components);
             this.messageTimer = new System.Windows.Forms.Timer(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.txtFloodCount = new Guna.UI.WinForms.GunaNumeric();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtMessageSenderIntervalMin = new Guna.UI.WinForms.GunaNumeric();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -55,16 +53,18 @@ namespace DFlood
             this.btnStartService = new Siticone.UI.WinForms.SiticoneRoundedGradientButton();
             this.btnImport = new Siticone.UI.WinForms.SiticoneRoundedGradientButton();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
+            this.txtFloodCount = new Siticone.UI.WinForms.SiticoneRoundedNumericUpDown();
+            this.txtMessageSenderIntervalMax = new Siticone.UI.WinForms.SiticoneRoundedNumericUpDown();
+            this.txtMessageSenderIntervalMin = new Siticone.UI.WinForms.SiticoneRoundedNumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtMessageSenderIntervalMax = new Guna.UI.WinForms.GunaNumeric();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
             this.topMost = new Siticone.UI.WinForms.SiticoneOSToggleSwith();
             this.unlimitedFlood = new Siticone.UI.WinForms.SiticoneOSToggleSwith();
             this.secureMode = new Siticone.UI.WinForms.SiticoneOSToggleSwith();
             this.label6 = new System.Windows.Forms.Label();
             this.gunaGroupBox4 = new Guna.UI.WinForms.GunaGroupBox();
+            this.messageDeleteInterval = new Siticone.UI.WinForms.SiticoneRoundedNumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
-            this.messageDeleteInterval = new Siticone.UI.WinForms.SiticoneNumericUpDown();
             this.deleteAfter = new Siticone.UI.WinForms.SiticoneCheckBox();
             this.keywords = new System.Windows.Forms.ListBox();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
@@ -74,12 +74,15 @@ namespace DFlood
             this.messageDeleteTimer = new System.Windows.Forms.Timer(this.components);
             this.ofdTimer = new System.Windows.Forms.Timer(this.components);
             this.formMover.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnOwO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.panel1.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFloodCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMessageSenderIntervalMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMessageSenderIntervalMin)).BeginInit();
             this.gunaGroupBox3.SuspendLayout();
             this.gunaGroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.messageDeleteInterval)).BeginInit();
@@ -91,8 +94,8 @@ namespace DFlood
             // formMover
             // 
             this.formMover.Controls.Add(this.label1);
-            this.formMover.Controls.Add(this.btnOwO);
             this.formMover.Controls.Add(this.btnMinimize);
+            this.formMover.Controls.Add(this.btnAbout);
             this.formMover.Controls.Add(this.btnExit);
             this.formMover.Dock = System.Windows.Forms.DockStyle.Top;
             this.formMover.Location = new System.Drawing.Point(0, 0);
@@ -104,42 +107,43 @@ namespace DFlood
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 9);
+            this.label1.Location = new System.Drawing.Point(717, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "DFlood Spam Trainer ";
             // 
-            // btnOwO
-            // 
-            this.btnOwO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOwO.Image = global::DFlood.Properties.Resources.discord_24px1;
-            this.btnOwO.Location = new System.Drawing.Point(14, 7);
-            this.btnOwO.Name = "btnOwO";
-            this.btnOwO.Size = new System.Drawing.Size(20, 20);
-            this.btnOwO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnOwO.TabIndex = 3;
-            this.btnOwO.TabStop = false;
-            // 
             // btnMinimize
             // 
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.Image = global::DFlood.Properties.Resources.yellow_circle;
-            this.btnMinimize.Location = new System.Drawing.Point(791, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(33, 9);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(22, 22);
+            this.btnMinimize.Size = new System.Drawing.Size(17, 17);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // btnAbout
+            // 
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.Image = global::DFlood.Properties.Resources.green_circle;
+            this.btnAbout.Location = new System.Drawing.Point(52, 9);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(17, 17);
+            this.btnAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAbout.TabIndex = 2;
+            this.btnAbout.TabStop = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // btnExit
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = global::DFlood.Properties.Resources.red_circle;
-            this.btnExit.Location = new System.Drawing.Point(828, 5);
+            this.btnExit.Location = new System.Drawing.Point(14, 9);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(22, 22);
+            this.btnExit.Size = new System.Drawing.Size(17, 17);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnExit.TabIndex = 2;
             this.btnExit.TabStop = false;
@@ -202,28 +206,6 @@ namespace DFlood
             this.label7.TabIndex = 0;
             this.label7.Text = "Metin Dosyasını İçeri Aktar";
             // 
-            // txtFloodCount
-            // 
-            this.txtFloodCount.AllowDrop = true;
-            this.txtFloodCount.BackColor = System.Drawing.Color.Transparent;
-            this.txtFloodCount.BaseColor = System.Drawing.Color.White;
-            this.txtFloodCount.BorderColor = System.Drawing.Color.Silver;
-            this.txtFloodCount.BorderSize = 0;
-            this.txtFloodCount.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtFloodCount.ButtonForeColor = System.Drawing.Color.White;
-            this.txtFloodCount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtFloodCount.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtFloodCount.ForeColor = System.Drawing.Color.Black;
-            this.txtFloodCount.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtFloodCount.Location = new System.Drawing.Point(196, 137);
-            this.txtFloodCount.Maximum = ((long)(60));
-            this.txtFloodCount.Minimum = ((long)(1));
-            this.txtFloodCount.Name = "txtFloodCount";
-            this.txtFloodCount.Radius = 600;
-            this.txtFloodCount.Size = new System.Drawing.Size(63, 30);
-            this.txtFloodCount.TabIndex = 1;
-            this.txtFloodCount.Value = ((long)(5));
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -232,29 +214,6 @@ namespace DFlood
             this.label10.Size = new System.Drawing.Size(186, 17);
             this.label10.TabIndex = 0;
             this.label10.Text = "Atılacak Flood Sayısı (30 - ∞ ) : ";
-            // 
-            // txtMessageSenderIntervalMin
-            // 
-            this.txtMessageSenderIntervalMin.AllowDrop = true;
-            this.txtMessageSenderIntervalMin.BackColor = System.Drawing.Color.Transparent;
-            this.txtMessageSenderIntervalMin.BaseColor = System.Drawing.Color.White;
-            this.txtMessageSenderIntervalMin.BorderColor = System.Drawing.Color.Silver;
-            this.txtMessageSenderIntervalMin.BorderSize = 0;
-            this.txtMessageSenderIntervalMin.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtMessageSenderIntervalMin.ButtonForeColor = System.Drawing.Color.White;
-            this.txtMessageSenderIntervalMin.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.txtMessageSenderIntervalMin.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMessageSenderIntervalMin.ForeColor = System.Drawing.Color.Black;
-            this.txtMessageSenderIntervalMin.ImeMode = System.Windows.Forms.ImeMode.Close;
-            this.txtMessageSenderIntervalMin.Location = new System.Drawing.Point(196, 42);
-            this.txtMessageSenderIntervalMin.Maximum = ((long)(5));
-            this.txtMessageSenderIntervalMin.Minimum = ((long)(1));
-            this.txtMessageSenderIntervalMin.Name = "txtMessageSenderIntervalMin";
-            this.txtMessageSenderIntervalMin.Radius = 600;
-            this.txtMessageSenderIntervalMin.Size = new System.Drawing.Size(63, 30);
-            this.txtMessageSenderIntervalMin.TabIndex = 1;
-            this.txtMessageSenderIntervalMin.Value = ((long)(3));
-            this.txtMessageSenderIntervalMin.ValueChanged += new System.EventHandler(this.txtMessageSenderIntervalMin_ValueChanged);
             // 
             // label9
             // 
@@ -330,6 +289,7 @@ namespace DFlood
             // 
             this.btnStartService.CheckedState.Parent = this.btnStartService;
             this.btnStartService.CustomImages.Parent = this.btnStartService;
+            this.btnStartService.Enabled = false;
             this.btnStartService.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnStartService.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnStartService.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -366,11 +326,11 @@ namespace DFlood
             this.gunaGroupBox2.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox2.Controls.Add(this.txtFloodCount);
+            this.gunaGroupBox2.Controls.Add(this.txtMessageSenderIntervalMax);
+            this.gunaGroupBox2.Controls.Add(this.txtMessageSenderIntervalMin);
             this.gunaGroupBox2.Controls.Add(this.label10);
             this.gunaGroupBox2.Controls.Add(this.label8);
             this.gunaGroupBox2.Controls.Add(this.label9);
-            this.gunaGroupBox2.Controls.Add(this.txtMessageSenderIntervalMax);
-            this.gunaGroupBox2.Controls.Add(this.txtMessageSenderIntervalMin);
             this.gunaGroupBox2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaGroupBox2.Location = new System.Drawing.Point(28, 264);
             this.gunaGroupBox2.Name = "gunaGroupBox2";
@@ -378,6 +338,117 @@ namespace DFlood
             this.gunaGroupBox2.TabIndex = 7;
             this.gunaGroupBox2.Text = "[DFlood Trainer] Gönderme Ayarları";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // txtFloodCount
+            // 
+            this.txtFloodCount.BackColor = System.Drawing.Color.Transparent;
+            this.txtFloodCount.BorderThickness = 0;
+            this.txtFloodCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFloodCount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFloodCount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFloodCount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFloodCount.DisabledState.Parent = this.txtFloodCount;
+            this.txtFloodCount.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.txtFloodCount.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.txtFloodCount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFloodCount.FocusedState.Parent = this.txtFloodCount;
+            this.txtFloodCount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFloodCount.ForeColor = System.Drawing.Color.Black;
+            this.txtFloodCount.Location = new System.Drawing.Point(197, 138);
+            this.txtFloodCount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtFloodCount.Name = "txtFloodCount";
+            this.txtFloodCount.ShadowDecoration.Parent = this.txtFloodCount;
+            this.txtFloodCount.Size = new System.Drawing.Size(59, 32);
+            this.txtFloodCount.TabIndex = 9;
+            this.txtFloodCount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtFloodCount.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.txtFloodCount.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // txtMessageSenderIntervalMax
+            // 
+            this.txtMessageSenderIntervalMax.BackColor = System.Drawing.Color.Transparent;
+            this.txtMessageSenderIntervalMax.BorderThickness = 0;
+            this.txtMessageSenderIntervalMax.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMessageSenderIntervalMax.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMessageSenderIntervalMax.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMessageSenderIntervalMax.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMessageSenderIntervalMax.DisabledState.Parent = this.txtMessageSenderIntervalMax;
+            this.txtMessageSenderIntervalMax.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.txtMessageSenderIntervalMax.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.txtMessageSenderIntervalMax.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMessageSenderIntervalMax.FocusedState.Parent = this.txtMessageSenderIntervalMax;
+            this.txtMessageSenderIntervalMax.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessageSenderIntervalMax.ForeColor = System.Drawing.Color.Black;
+            this.txtMessageSenderIntervalMax.Location = new System.Drawing.Point(196, 92);
+            this.txtMessageSenderIntervalMax.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.txtMessageSenderIntervalMax.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.txtMessageSenderIntervalMax.Name = "txtMessageSenderIntervalMax";
+            this.txtMessageSenderIntervalMax.ShadowDecoration.Parent = this.txtMessageSenderIntervalMax;
+            this.txtMessageSenderIntervalMax.Size = new System.Drawing.Size(60, 32);
+            this.txtMessageSenderIntervalMax.TabIndex = 9;
+            this.txtMessageSenderIntervalMax.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtMessageSenderIntervalMax.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.txtMessageSenderIntervalMax.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.txtMessageSenderIntervalMax.ValueChanged += new System.EventHandler(this.txtMessageSenderIntervalMax_ValueChanged);
+            // 
+            // txtMessageSenderIntervalMin
+            // 
+            this.txtMessageSenderIntervalMin.BackColor = System.Drawing.Color.Transparent;
+            this.txtMessageSenderIntervalMin.BorderThickness = 0;
+            this.txtMessageSenderIntervalMin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMessageSenderIntervalMin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMessageSenderIntervalMin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMessageSenderIntervalMin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMessageSenderIntervalMin.DisabledState.Parent = this.txtMessageSenderIntervalMin;
+            this.txtMessageSenderIntervalMin.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.txtMessageSenderIntervalMin.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.txtMessageSenderIntervalMin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMessageSenderIntervalMin.FocusedState.Parent = this.txtMessageSenderIntervalMin;
+            this.txtMessageSenderIntervalMin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessageSenderIntervalMin.ForeColor = System.Drawing.Color.Black;
+            this.txtMessageSenderIntervalMin.Location = new System.Drawing.Point(197, 43);
+            this.txtMessageSenderIntervalMin.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtMessageSenderIntervalMin.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.txtMessageSenderIntervalMin.Name = "txtMessageSenderIntervalMin";
+            this.txtMessageSenderIntervalMin.ShadowDecoration.Parent = this.txtMessageSenderIntervalMin;
+            this.txtMessageSenderIntervalMin.Size = new System.Drawing.Size(59, 32);
+            this.txtMessageSenderIntervalMin.TabIndex = 9;
+            this.txtMessageSenderIntervalMin.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtMessageSenderIntervalMin.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.txtMessageSenderIntervalMin.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.txtMessageSenderIntervalMin.ValueChanged += new System.EventHandler(this.txtMessageSenderIntervalMin_ValueChanged);
             // 
             // label8
             // 
@@ -387,29 +458,6 @@ namespace DFlood
             this.label8.Size = new System.Drawing.Size(191, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "Gönderme Aralığı (maximum) : ";
-            // 
-            // txtMessageSenderIntervalMax
-            // 
-            this.txtMessageSenderIntervalMax.AllowDrop = true;
-            this.txtMessageSenderIntervalMax.BackColor = System.Drawing.Color.Transparent;
-            this.txtMessageSenderIntervalMax.BaseColor = System.Drawing.Color.White;
-            this.txtMessageSenderIntervalMax.BorderColor = System.Drawing.Color.Silver;
-            this.txtMessageSenderIntervalMax.BorderSize = 0;
-            this.txtMessageSenderIntervalMax.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtMessageSenderIntervalMax.ButtonForeColor = System.Drawing.Color.White;
-            this.txtMessageSenderIntervalMax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtMessageSenderIntervalMax.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMessageSenderIntervalMax.ForeColor = System.Drawing.Color.Black;
-            this.txtMessageSenderIntervalMax.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtMessageSenderIntervalMax.Location = new System.Drawing.Point(196, 92);
-            this.txtMessageSenderIntervalMax.Maximum = ((long)(10));
-            this.txtMessageSenderIntervalMax.Minimum = ((long)(6));
-            this.txtMessageSenderIntervalMax.Name = "txtMessageSenderIntervalMax";
-            this.txtMessageSenderIntervalMax.Radius = 600;
-            this.txtMessageSenderIntervalMax.Size = new System.Drawing.Size(63, 30);
-            this.txtMessageSenderIntervalMax.TabIndex = 1;
-            this.txtMessageSenderIntervalMax.Value = ((long)(6));
-            this.txtMessageSenderIntervalMax.ValueChanged += new System.EventHandler(this.txtMessageSenderIntervalMax_ValueChanged);
             // 
             // gunaGroupBox3
             // 
@@ -471,8 +519,8 @@ namespace DFlood
             this.gunaGroupBox4.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox4.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox4.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox4.Controls.Add(this.label13);
             this.gunaGroupBox4.Controls.Add(this.messageDeleteInterval);
+            this.gunaGroupBox4.Controls.Add(this.label13);
             this.gunaGroupBox4.Controls.Add(this.deleteAfter);
             this.gunaGroupBox4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaGroupBox4.Location = new System.Drawing.Point(324, 264);
@@ -481,15 +529,6 @@ namespace DFlood
             this.gunaGroupBox4.TabIndex = 7;
             this.gunaGroupBox4.Text = "[DFlood Trainer] Silme Ayarları";
             this.gunaGroupBox4.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(56, 119);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 17);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Silme Süresi : ";
             // 
             // messageDeleteInterval
             // 
@@ -506,14 +545,38 @@ namespace DFlood
             this.messageDeleteInterval.FocusedState.Parent = this.messageDeleteInterval;
             this.messageDeleteInterval.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.messageDeleteInterval.ForeColor = System.Drawing.Color.Black;
-            this.messageDeleteInterval.Location = new System.Drawing.Point(146, 114);
+            this.messageDeleteInterval.Location = new System.Drawing.Point(147, 111);
+            this.messageDeleteInterval.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.messageDeleteInterval.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.messageDeleteInterval.Name = "messageDeleteInterval";
             this.messageDeleteInterval.ShadowDecoration.Parent = this.messageDeleteInterval;
-            this.messageDeleteInterval.Size = new System.Drawing.Size(63, 27);
-            this.messageDeleteInterval.TabIndex = 2;
+            this.messageDeleteInterval.Size = new System.Drawing.Size(59, 32);
+            this.messageDeleteInterval.TabIndex = 9;
             this.messageDeleteInterval.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.messageDeleteInterval.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.messageDeleteInterval.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.messageDeleteInterval.ValueChanged += new System.EventHandler(this.messageDeleteInterval_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(56, 119);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 17);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Silme Süresi : ";
             // 
             // deleteAfter
             // 
@@ -610,7 +673,7 @@ namespace DFlood
             // 
             this.ofdTimer.Interval = 1000;
             // 
-            // cheat
+            // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -632,14 +695,14 @@ namespace DFlood
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "cheat";
+            this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DFlood";
             this.Load += new System.EventHandler(this.cheat_Load);
             this.formMover.ResumeLayout(false);
             this.formMover.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnOwO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -647,6 +710,9 @@ namespace DFlood
             this.gunaGroupBox1.PerformLayout();
             this.gunaGroupBox2.ResumeLayout(false);
             this.gunaGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFloodCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMessageSenderIntervalMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMessageSenderIntervalMin)).EndInit();
             this.gunaGroupBox3.ResumeLayout(false);
             this.gunaGroupBox3.PerformLayout();
             this.gunaGroupBox4.ResumeLayout(false);
@@ -666,17 +732,14 @@ namespace DFlood
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnMinimize;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnOwO;
         private Guna.UI.WinForms.GunaElipse elipseForm;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer messageTimer;
-        private Guna.UI.WinForms.GunaNumeric txtMessageSenderIntervalMin;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private Guna.UI.WinForms.GunaCircleProgressBar messageRefreshTime;
         private System.Windows.Forms.Label label15;
-        private Guna.UI.WinForms.GunaNumeric txtFloodCount;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Timer tmrVirusTotal;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -686,14 +749,12 @@ namespace DFlood
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox4;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox2;
         private System.Windows.Forms.Label label8;
-        private Guna.UI.WinForms.GunaNumeric txtMessageSenderIntervalMax;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox5;
         private System.Windows.Forms.ListBox keywords;
         private System.Windows.Forms.Label label16;
         private Siticone.UI.WinForms.SiticoneCheckBox deleteAfter;
         private System.Windows.Forms.Label label13;
-        private Siticone.UI.WinForms.SiticoneNumericUpDown messageDeleteInterval;
         private System.Windows.Forms.Timer messageDeleteTimer;
         private System.Windows.Forms.Timer ofdTimer;
         private System.Windows.Forms.Label label2;
@@ -703,5 +764,10 @@ namespace DFlood
         private Siticone.UI.WinForms.SiticoneRoundedGradientButton btnImport;
         private Guna.UI.WinForms.GunaTextBox txtFilePath;
         private Siticone.UI.WinForms.SiticoneRoundedGradientButton btnStartService;
+        private Siticone.UI.WinForms.SiticoneRoundedNumericUpDown txtMessageSenderIntervalMin;
+        private Siticone.UI.WinForms.SiticoneRoundedNumericUpDown txtMessageSenderIntervalMax;
+        private Siticone.UI.WinForms.SiticoneRoundedNumericUpDown txtFloodCount;
+        private System.Windows.Forms.PictureBox btnAbout;
+        private Siticone.UI.WinForms.SiticoneRoundedNumericUpDown messageDeleteInterval;
     }
 }

@@ -18,7 +18,7 @@ namespace DFlood
             InitializeComponent();
             splashTimer.Start();
         }
-        cheat cht = new cheat();
+        main cht = new main();
         System.Media.SoundPlayer snd = new SoundPlayer();
         private void splashTimer_Tick(object sender, EventArgs e)
         {

@@ -22,5 +22,101 @@ namespace DFlood.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsSecureMode {
+            get {
+                return ((bool)(this["IsSecureMode"]));
+            }
+            set {
+                this["IsSecureMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsUnlimitedFlood {
+            get {
+                return ((bool)(this["IsUnlimitedFlood"]));
+            }
+            set {
+                this["IsUnlimitedFlood"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsTopMost {
+            get {
+                return ((bool)(this["IsTopMost"]));
+            }
+            set {
+                this["IsTopMost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MinInterval {
+            get {
+                return ((int)(this["MinInterval"]));
+            }
+            set {
+                this["MinInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MaxInvertal {
+            get {
+                return ((int)(this["MaxInvertal"]));
+            }
+            set {
+                this["MaxInvertal"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int FloodNumber {
+            get {
+                return ((int)(this["FloodNumber"]));
+            }
+            set {
+                this["FloodNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDeleteAfter {
+            get {
+                return ((bool)(this["IsDeleteAfter"]));
+            }
+            set {
+                this["IsDeleteAfter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int msgDeleteInterval {
+            get {
+                return ((int)(this["msgDeleteInterval"]));
+            }
+            set {
+                this["msgDeleteInterval"] = value;
+            }
+        }
     }
 }
