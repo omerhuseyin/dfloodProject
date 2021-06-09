@@ -120,6 +120,17 @@
   <metadata name="gunaElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="splashProgressBar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAZsAAAANCAYAAAB/0MMSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADwSURBVHhe7dsxSgNBGAXgPYZHsLT0CFbWXsIDeAsrb2Lr
+        FXKDyQGMiBY2FvoWfpgkDJjdgNX34GND5k39WEImERGRf812u71rrW3y/AGAU83bEU/5fFGTMk5KLyl9
+        7F8GgIV22ZPbmpbD5OA+PgeXAGCR7Mlbnpc1MT05aMdlAFgrs/JcE9MzKgLAWhmbr5qYnlERAM5RE9Mz
+        KgHAOWpievLl63EJANZqrX3XxPTMP+SMygCwRnZlUxPTk4OrHOyOywCwVPbkPc+bmpjD5OChCsPLAPCX
+        2pHHmpZxUrieX332LwLAKbIf8382B2800/QLHXiqHCVxZzUAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="splashTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>134, 17</value>
   </metadata>

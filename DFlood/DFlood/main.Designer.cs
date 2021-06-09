@@ -33,9 +33,6 @@ namespace DFlood
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.formMover = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.btnAbout = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,15 +65,16 @@ namespace DFlood
             this.deleteAfter = new Siticone.UI.WinForms.SiticoneCheckBox();
             this.keywords = new System.Windows.Forms.ListBox();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
+            this.messageDeleteTimer = new System.Windows.Forms.Timer(this.components);
+            this.ofdTimer = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.messageRefreshTime = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.messageDeleteTimer = new System.Windows.Forms.Timer(this.components);
-            this.ofdTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnMinimize = new System.Windows.Forms.PictureBox();
+            this.btnAbout = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.PictureBox();
             this.formMover.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.panel1.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
@@ -89,6 +87,9 @@ namespace DFlood
             this.gunaGroupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // formMover
@@ -113,42 +114,6 @@ namespace DFlood
             this.label1.TabIndex = 4;
             this.label1.Text = "DFlood Spam Trainer ";
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Image = global::DFlood.Properties.Resources.yellow_circle;
-            this.btnMinimize.Location = new System.Drawing.Point(33, 9);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(17, 17);
-            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnAbout
-            // 
-            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.Image = global::DFlood.Properties.Resources.green_circle;
-            this.btnAbout.Location = new System.Drawing.Point(52, 9);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(17, 17);
-            this.btnAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAbout.TabIndex = 2;
-            this.btnAbout.TabStop = false;
-            this.btnAbout.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Image = global::DFlood.Properties.Resources.red_circle;
-            this.btnExit.Location = new System.Drawing.Point(14, 9);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(17, 17);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
@@ -163,7 +128,7 @@ namespace DFlood
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 11);
+            this.label4.Location = new System.Drawing.Point(12, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 17);
             this.label4.TabIndex = 0;
@@ -172,11 +137,11 @@ namespace DFlood
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(753, 11);
+            this.label2.Location = new System.Drawing.Point(816, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 17);
+            this.label2.Size = new System.Drawing.Size(33, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "BETA Build 0.0.1";
+            this.label2.Text = "v0.2";
             // 
             // label16
             // 
@@ -624,6 +589,15 @@ namespace DFlood
             this.gunaGroupBox5.Text = "[DFlood Trainer] Kelime Listesi";
             this.gunaGroupBox5.TextLocation = new System.Drawing.Point(10, 8);
             // 
+            // messageDeleteTimer
+            // 
+            this.messageDeleteTimer.Interval = 1000;
+            this.messageDeleteTimer.Tick += new System.EventHandler(this.messageDeleteTimer_Tick);
+            // 
+            // ofdTimer
+            // 
+            this.ofdTimer.Interval = 1000;
+            // 
             // messageRefreshTime
             // 
             this.messageRefreshTime.AnimationSpeed = 0.6F;
@@ -632,16 +606,16 @@ namespace DFlood
             this.messageRefreshTime.IdleColor = System.Drawing.Color.Gainsboro;
             this.messageRefreshTime.IdleOffset = 20;
             this.messageRefreshTime.IdleThickness = 15;
-            this.messageRefreshTime.Image = global::DFlood.Properties.Resources.discord_will_provide_official_verification_esports_team_4;
+            this.messageRefreshTime.Image = global::DFlood.Properties.Resources.dflood;
             this.messageRefreshTime.ImageSize = new System.Drawing.Size(120, 120);
-            this.messageRefreshTime.Location = new System.Drawing.Point(653, 301);
+            this.messageRefreshTime.Location = new System.Drawing.Point(653, 296);
             this.messageRefreshTime.Maximum = 1000;
             this.messageRefreshTime.Name = "messageRefreshTime";
             this.messageRefreshTime.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.messageRefreshTime.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.messageRefreshTime.ProgressOffset = 20;
             this.messageRefreshTime.ProgressThickness = 30;
-            this.messageRefreshTime.Size = new System.Drawing.Size(144, 144);
+            this.messageRefreshTime.Size = new System.Drawing.Size(156, 156);
             this.messageRefreshTime.TabIndex = 4;
             this.messageRefreshTime.MouseDown += new System.Windows.Forms.MouseEventHandler(this.messageRefreshTime_MouseDown);
             this.messageRefreshTime.MouseUp += new System.Windows.Forms.MouseEventHandler(this.messageRefreshTime_MouseUp);
@@ -664,14 +638,41 @@ namespace DFlood
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // messageDeleteTimer
+            // btnMinimize
             // 
-            this.messageDeleteTimer.Interval = 1000;
-            this.messageDeleteTimer.Tick += new System.EventHandler(this.messageDeleteTimer_Tick);
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Image = global::DFlood.Properties.Resources.yellow_circle;
+            this.btnMinimize.Location = new System.Drawing.Point(33, 9);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(17, 17);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // ofdTimer
+            // btnAbout
             // 
-            this.ofdTimer.Interval = 1000;
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.Image = global::DFlood.Properties.Resources.green_circle;
+            this.btnAbout.Location = new System.Drawing.Point(52, 9);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(17, 17);
+            this.btnAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAbout.TabIndex = 2;
+            this.btnAbout.TabStop = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Image = global::DFlood.Properties.Resources.red_circle;
+            this.btnExit.Location = new System.Drawing.Point(14, 9);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(17, 17);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // main
             // 
@@ -698,12 +699,9 @@ namespace DFlood
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DFlood";
-            this.Load += new System.EventHandler(this.cheat_Load);
+            this.Load += new System.EventHandler(this.main_Load);
             this.formMover.ResumeLayout(false);
             this.formMover.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gunaGroupBox1.ResumeLayout(false);
@@ -721,6 +719,9 @@ namespace DFlood
             this.gunaGroupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -769,5 +770,6 @@ namespace DFlood
         private Siticone.UI.WinForms.SiticoneRoundedNumericUpDown txtFloodCount;
         private System.Windows.Forms.PictureBox btnAbout;
         private Siticone.UI.WinForms.SiticoneRoundedNumericUpDown messageDeleteInterval;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -1,4 +1,6 @@
-﻿using ShowMessage;
+﻿//coded by wés <3
+using DFlood.DFLoodDiscordRPC;
+using ShowMessage;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -22,6 +24,9 @@ namespace DFlood
         private Random rnd = new Random();
         private OpenFileDialog ofd = new OpenFileDialog();
 
+        private DiscordRpc.EventHandlers handlers;
+        private DiscordRpc.RichPresence presence;
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -38,6 +43,22 @@ namespace DFlood
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        public void DFloodDiscordRPCClient()
+        {
+            this.handlers = default(DiscordRpc.EventHandlers);
+            DiscordRpc.Initialize("852261353480650752", ref this.handlers, true, null);
+            this.handlers = default(DiscordRpc.EventHandlers);
+            DiscordRpc.Initialize("852261353480650752", ref this.handlers, true, null);
+            this.presence.details = "DFlood Discord Trainer";
+            this.presence.state = "Main Menu";
+            this.presence.largeImageKey = "logo";
+            this.presence.smallImageKey = "logo";
+            this.presence.largeImageText = "DFlood Spam Trainer";
+            this.presence.smallImageText = "Test Ediliyor";
+            this.presence.startTimestamp = 1507665886;
+            DiscordRpc.UpdatePresence(ref this.presence);
         }
 
         public void GetPersonalUserSettings()
@@ -175,14 +196,15 @@ namespace DFlood
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void main_Load(object sender, EventArgs e)
+        {
+            DFloodDiscordRPCClient();
+            GetPersonalUserSettings();
+        }
+
         private void messageRefreshTime_MouseDown(object sender, MouseEventArgs e)
         {
             tmrVirusTotal.Start();
-        }
-
-        private void cheat_Load(object sender, EventArgs e)
-        {
-            GetPersonalUserSettings();
         }
 
         private void secureMode_CheckedChanged(object sender, EventArgs e)
