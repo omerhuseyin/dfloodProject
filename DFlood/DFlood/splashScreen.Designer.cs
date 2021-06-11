@@ -33,7 +33,6 @@ namespace DFlood
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(splashScreen));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.splashTimer = new System.Windows.Forms.Timer(this.components);
-            this.splashProgressBar = new Bunifu.UI.WinForms.BunifuProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace DFlood
             this.btnMinimize = new System.Windows.Forms.PictureBox();
             this.btnAbout = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.PictureBox();
+            this.splashProgressBar = new Bunifu.UI.WinForms.BunifuProgressBar();
             this.formMover.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
@@ -57,32 +57,6 @@ namespace DFlood
             // 
             this.splashTimer.Interval = 10;
             this.splashTimer.Tick += new System.EventHandler(this.splashTimer_Tick_1);
-            // 
-            // splashProgressBar
-            // 
-            this.splashProgressBar.AllowAnimations = false;
-            this.splashProgressBar.Animation = 0;
-            this.splashProgressBar.AnimationSpeed = 220;
-            this.splashProgressBar.AnimationStep = 10;
-            this.splashProgressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.splashProgressBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splashProgressBar.BackgroundImage")));
-            this.splashProgressBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.splashProgressBar.BorderRadius = 9;
-            this.splashProgressBar.BorderThickness = 1;
-            this.splashProgressBar.Location = new System.Drawing.Point(25, 189);
-            this.splashProgressBar.Maximum = 1500;
-            this.splashProgressBar.MaximumValue = 1500;
-            this.splashProgressBar.Minimum = 0;
-            this.splashProgressBar.MinimumValue = 0;
-            this.splashProgressBar.Name = "splashProgressBar";
-            this.splashProgressBar.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splashProgressBar.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.splashProgressBar.ProgressColorLeft = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.splashProgressBar.ProgressColorRight = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.splashProgressBar.Size = new System.Drawing.Size(411, 13);
-            this.splashProgressBar.TabIndex = 1;
-            this.splashProgressBar.Value = 0;
-            this.splashProgressBar.ValueByTransition = 0;
             // 
             // label1
             // 
@@ -161,7 +135,6 @@ namespace DFlood
             this.btnAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAbout.TabIndex = 2;
             this.btnAbout.TabStop = false;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnExit
             // 
@@ -174,6 +147,32 @@ namespace DFlood
             this.btnExit.TabIndex = 2;
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // splashProgressBar
+            // 
+            this.splashProgressBar.AllowAnimations = false;
+            this.splashProgressBar.Animation = 0;
+            this.splashProgressBar.AnimationSpeed = 220;
+            this.splashProgressBar.AnimationStep = 10;
+            this.splashProgressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.splashProgressBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splashProgressBar.BackgroundImage")));
+            this.splashProgressBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.splashProgressBar.BorderRadius = 9;
+            this.splashProgressBar.BorderThickness = 1;
+            this.splashProgressBar.Location = new System.Drawing.Point(25, 189);
+            this.splashProgressBar.Maximum = 1500;
+            this.splashProgressBar.MaximumValue = 1500;
+            this.splashProgressBar.Minimum = 0;
+            this.splashProgressBar.MinimumValue = 0;
+            this.splashProgressBar.Name = "splashProgressBar";
+            this.splashProgressBar.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splashProgressBar.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.splashProgressBar.ProgressColorLeft = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.splashProgressBar.ProgressColorRight = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.splashProgressBar.Size = new System.Drawing.Size(411, 13);
+            this.splashProgressBar.TabIndex = 1;
+            this.splashProgressBar.Value = 0;
+            this.splashProgressBar.ValueByTransition = 0;
             // 
             // splashScreen
             // 

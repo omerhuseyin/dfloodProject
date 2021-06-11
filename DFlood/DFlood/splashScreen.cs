@@ -71,9 +71,5 @@ namespace DFlood
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void btnAbout_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

