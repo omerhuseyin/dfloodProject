@@ -27,6 +27,7 @@ namespace DFlood
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        [System.Obsolete]
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -191,6 +192,7 @@ namespace DFlood
             this.Name = "splashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OwO Bot External Trainer";
+            this.Load += new System.EventHandler(this.splashScreen_Load_1);
             this.formMover.ResumeLayout(false);
             this.formMover.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();

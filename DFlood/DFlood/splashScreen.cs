@@ -9,18 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Runtime.InteropServices;
+using Dropbox.Api;
 
 namespace DFlood
 {
     public partial class splashScreen : Form
     {
+        [Obsolete]
         public splashScreen()
         {
             InitializeComponent();
             splashTimer.Start();
         }
 
+        [Obsolete]
         private main cht = new main();
+
         private System.Media.SoundPlayer snd = new SoundPlayer();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -46,6 +50,7 @@ namespace DFlood
             splashTimer.Start();
         }
 
+        [Obsolete]
         private void splashTimer_Tick_1(object sender, EventArgs e)
         {
             splashProgressBar.Value += 10;
@@ -70,6 +75,11 @@ namespace DFlood
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void splashScreen_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

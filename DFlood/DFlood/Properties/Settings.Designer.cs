@@ -38,96 +38,120 @@ namespace DFlood.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsUnlimitedFlood {
+        public bool IsTopMostMode {
             get {
-                return ((bool)(this["IsUnlimitedFlood"]));
+                return ((bool)(this["IsTopMostMode"]));
             }
             set {
-                this["IsUnlimitedFlood"] = value;
+                this["IsTopMostMode"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsTopMost {
+        public bool IsUnlimitedFloodMode {
             get {
-                return ((bool)(this["IsTopMost"]));
+                return ((bool)(this["IsUnlimitedFloodMode"]));
             }
             set {
-                this["IsTopMost"] = value;
+                this["IsUnlimitedFloodMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsSecurityPointMode {
+            get {
+                return ((bool)(this["IsSecurityPointMode"]));
+            }
+            set {
+                this["IsSecurityPointMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDeleteAfterMode {
+            get {
+                return ((bool)(this["IsDeleteAfterMode"]));
+            }
+            set {
+                this["IsDeleteAfterMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int MaximumSenderInterval {
+            get {
+                return ((int)(this["MaximumSenderInterval"]));
+            }
+            set {
+                this["MaximumSenderInterval"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public int MinInterval {
+        public int MinimumSenderInterval {
             get {
-                return ((int)(this["MinInterval"]));
+                return ((int)(this["MinimumSenderInterval"]));
             }
             set {
-                this["MinInterval"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public int MaxInvertal {
-            get {
-                return ((int)(this["MaxInvertal"]));
-            }
-            set {
-                this["MaxInvertal"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
-        public int FloodNumber {
-            get {
-                return ((int)(this["FloodNumber"]));
-            }
-            set {
-                this["FloodNumber"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsDeleteAfter {
-            get {
-                return ((bool)(this["IsDeleteAfter"]));
-            }
-            set {
-                this["IsDeleteAfter"] = value;
+                this["MinimumSenderInterval"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int msgDeleteInterval {
+        public int DeleteAfterInterval {
             get {
-                return ((int)(this["msgDeleteInterval"]));
+                return ((int)(this["DeleteAfterInterval"]));
             }
             set {
-                this["msgDeleteInterval"] = value;
+                this["DeleteAfterInterval"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int GetTopFloodNumber {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDiscordChecker {
             get {
-                return ((int)(this["GetTopFloodNumber"]));
+                return ((bool)(this["IsDiscordChecker"]));
             }
             set {
-                this["GetTopFloodNumber"] = value;
+                this["IsDiscordChecker"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsAutoSave {
+            get {
+                return ((bool)(this["IsAutoSave"]));
+            }
+            set {
+                this["IsAutoSave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int FloodCount {
+            get {
+                return ((int)(this["FloodCount"]));
+            }
+            set {
+                this["FloodCount"] = value;
             }
         }
     }

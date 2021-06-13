@@ -11,12 +11,14 @@ namespace DFlood
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+
         [STAThread]
+        [Obsolete]
         private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new splashScreen());
+            Application.Run(new MainMenu());
         }
     }
 }
