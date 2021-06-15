@@ -29,25 +29,27 @@ namespace DFlood.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStats));
             this.bunifuGradientPanel3 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.bunifuGradientPanel2 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblTotalTimes = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuGradientPanel2 = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.lblTotalDeletes = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.lblTotalFloods = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuGradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel3
@@ -57,7 +59,7 @@ namespace DFlood.Forms
             this.bunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel3.BorderRadius = 35;
             this.bunifuGradientPanel3.Controls.Add(this.pictureBox3);
-            this.bunifuGradientPanel3.Controls.Add(this.label6);
+            this.bunifuGradientPanel3.Controls.Add(this.lblTotalTimes);
             this.bunifuGradientPanel3.Controls.Add(this.label5);
             this.bunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(92)))), ((int)(((byte)(188)))));
             this.bunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.DeepPink;
@@ -69,13 +71,43 @@ namespace DFlood.Forms
             this.bunifuGradientPanel3.Size = new System.Drawing.Size(150, 120);
             this.bunifuGradientPanel3.TabIndex = 0;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::DFlood.Properties.Resources.time;
+            this.pictureBox3.Location = new System.Drawing.Point(112, 88);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(31, 29);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lblTotalTimes
+            // 
+            this.lblTotalTimes.AutoSize = true;
+            this.lblTotalTimes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalTimes.Location = new System.Drawing.Point(51, 50);
+            this.lblTotalTimes.Name = "lblTotalTimes";
+            this.lblTotalTimes.Size = new System.Drawing.Size(51, 22);
+            this.lblTotalTimes.TabIndex = 2;
+            this.lblTotalTimes.Text = "NaN";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(17, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 21);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Çalışma Süresi";
+            // 
             // bunifuGradientPanel2
             // 
             this.bunifuGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel2.BorderRadius = 35;
-            this.bunifuGradientPanel2.Controls.Add(this.label4);
+            this.bunifuGradientPanel2.Controls.Add(this.lblTotalDeletes);
             this.bunifuGradientPanel2.Controls.Add(this.pictureBox2);
             this.bunifuGradientPanel2.Controls.Add(this.label3);
             this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.Blue;
@@ -88,6 +120,16 @@ namespace DFlood.Forms
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(150, 120);
             this.bunifuGradientPanel2.TabIndex = 0;
             // 
+            // lblTotalDeletes
+            // 
+            this.lblTotalDeletes.AutoSize = true;
+            this.lblTotalDeletes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalDeletes.Location = new System.Drawing.Point(51, 50);
+            this.lblTotalDeletes.Name = "lblTotalDeletes";
+            this.lblTotalDeletes.Size = new System.Drawing.Size(51, 22);
+            this.lblTotalDeletes.TabIndex = 2;
+            this.lblTotalDeletes.Text = "NaN";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DFlood.Properties.Resources.deletemessages1;
@@ -98,13 +140,23 @@ namespace DFlood.Forms
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(25, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Silinen Flood";
+            // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.BorderRadius = 35;
-            this.bunifuGradientPanel1.Controls.Add(this.label2);
+            this.bunifuGradientPanel1.Controls.Add(this.lblTotalFloods);
             this.bunifuGradientPanel1.Controls.Add(this.label1);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Gold;
@@ -117,15 +169,15 @@ namespace DFlood.Forms
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(150, 120);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // lblTotalFloods
             // 
-            this.pictureBox1.Image = global::DFlood.Properties.Resources.sendmessages;
-            this.pictureBox1.Location = new System.Drawing.Point(107, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lblTotalFloods.AutoSize = true;
+            this.lblTotalFloods.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalFloods.Location = new System.Drawing.Point(50, 50);
+            this.lblTotalFloods.Name = "lblTotalFloods";
+            this.lblTotalFloods.Size = new System.Drawing.Size(51, 22);
+            this.lblTotalFloods.TabIndex = 2;
+            this.lblTotalFloods.Text = "NaN";
             // 
             // label1
             // 
@@ -137,65 +189,20 @@ namespace DFlood.Forms
             this.label1.TabIndex = 1;
             this.label1.Text = "Toplam Flood";
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(50, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "NaN";
+            this.pictureBox1.Image = global::DFlood.Properties.Resources.sendmessages;
+            this.pictureBox1.Location = new System.Drawing.Point(107, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // timer1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(25, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Silinen Flood";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(51, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 22);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "NaN";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(17, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 21);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Çalışma Süresi";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(51, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 22);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "NaN";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DFlood.Properties.Resources.time;
-            this.pictureBox3.Location = new System.Drawing.Point(112, 88);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormStats
             // 
@@ -211,15 +218,16 @@ namespace DFlood.Forms
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormStats";
             this.Text = "DFlood İstatistikleri";
+            this.Load += new System.EventHandler(this.FormStats_Load);
             this.bunifuGradientPanel3.ResumeLayout(false);
             this.bunifuGradientPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.bunifuGradientPanel2.ResumeLayout(false);
             this.bunifuGradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,11 +240,12 @@ namespace DFlood.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotalTimes;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTotalDeletes;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTotalFloods;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -121,6 +121,9 @@
   <data name="time" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="discord-will-provide-official-verification-esports-team-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\discord-will-provide-official-verification-esports-team-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="deletemessages" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deletemessages.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +145,8 @@
   <data name="sendmessages" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sendmessages.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clouderror_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clouderror_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deletemessages1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deletemessages1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cloud_sync_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cloud_sync_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,10 +175,13 @@
   <data name="success_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\success_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="discord-will-provide-official-verification-esports-team-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\discord-will-provide-official-verification-esports-team-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clouderror_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clouderror_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deletemessages1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deletemessages1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usaflag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usaflag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trflag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trflag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

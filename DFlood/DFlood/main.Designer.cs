@@ -34,7 +34,6 @@ namespace DFlood
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.messageTimer = new System.Windows.Forms.Timer(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.tmrVirusTotal = new System.Windows.Forms.Timer(this.components);
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.txtFilePath = new Guna.UI.WinForms.GunaTextBox();
             this.btnStartService = new Siticone.UI.WinForms.SiticoneRoundedGradientButton();
@@ -42,10 +41,8 @@ namespace DFlood
             this.keywords = new System.Windows.Forms.ListBox();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
             this.messageDeleteTimer = new System.Windows.Forms.Timer(this.components);
-            this.ofdTimer = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.updater = new System.Windows.Forms.Timer(this.components);
+            this.dataChecker = new System.Windows.Forms.Timer(this.components);
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,10 +62,6 @@ namespace DFlood
             this.label7.TabIndex = 0;
             this.label7.Text = "Metin Dosyasını İçeri Aktar";
             // 
-            // tmrVirusTotal
-            // 
-            this.tmrVirusTotal.Interval = 10;
-            // 
             // gunaGroupBox1
             // 
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
@@ -79,7 +72,7 @@ namespace DFlood
             this.gunaGroupBox1.Controls.Add(this.btnImport);
             this.gunaGroupBox1.Controls.Add(this.label7);
             this.gunaGroupBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaGroupBox1.Location = new System.Drawing.Point(63, 56);
+            this.gunaGroupBox1.Location = new System.Drawing.Point(57, 82);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
             this.gunaGroupBox1.Size = new System.Drawing.Size(272, 192);
             this.gunaGroupBox1.TabIndex = 6;
@@ -152,7 +145,7 @@ namespace DFlood
             this.keywords.ItemHeight = 17;
             this.keywords.Location = new System.Drawing.Point(0, 29);
             this.keywords.Name = "keywords";
-            this.keywords.Size = new System.Drawing.Size(216, 153);
+            this.keywords.Size = new System.Drawing.Size(227, 170);
             this.keywords.TabIndex = 9;
             // 
             // gunaGroupBox5
@@ -162,9 +155,9 @@ namespace DFlood
             this.gunaGroupBox5.BorderColor = System.Drawing.Color.Empty;
             this.gunaGroupBox5.Controls.Add(this.keywords);
             this.gunaGroupBox5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaGroupBox5.Location = new System.Drawing.Point(375, 56);
+            this.gunaGroupBox5.Location = new System.Drawing.Point(375, 82);
             this.gunaGroupBox5.Name = "gunaGroupBox5";
-            this.gunaGroupBox5.Size = new System.Drawing.Size(219, 171);
+            this.gunaGroupBox5.Size = new System.Drawing.Size(219, 192);
             this.gunaGroupBox5.TabIndex = 0;
             this.gunaGroupBox5.Text = "Kelime Listesi";
             this.gunaGroupBox5.TextLocation = new System.Drawing.Point(10, 8);
@@ -174,15 +167,6 @@ namespace DFlood
             this.messageDeleteTimer.Interval = 1000;
             this.messageDeleteTimer.Tick += new System.EventHandler(this.messageDeleteTimer_Tick);
             // 
-            // ofdTimer
-            // 
-            this.ofdTimer.Interval = 1000;
-            this.ofdTimer.Tick += new System.EventHandler(this.ofdTimer_Tick);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DFlood.Properties.Resources.rgbline;
@@ -191,6 +175,10 @@ namespace DFlood
             this.pictureBox2.Size = new System.Drawing.Size(862, 10);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            // 
+            // dataChecker
+            // 
+            this.dataChecker.Interval = 1000;
             // 
             // main
             // 
@@ -209,7 +197,7 @@ namespace DFlood
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DFlood";
+            this.Text = "Servis Başlatıcısı";
             this.Load += new System.EventHandler(this.main_Load);
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
@@ -222,17 +210,14 @@ namespace DFlood
         #endregion
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer messageTimer;
-        private System.Windows.Forms.Timer tmrVirusTotal;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox5;
         private System.Windows.Forms.ListBox keywords;
         private System.Windows.Forms.Timer messageDeleteTimer;
-        private System.Windows.Forms.Timer ofdTimer;
         private Siticone.UI.WinForms.SiticoneRoundedGradientButton btnImport;
         private Guna.UI.WinForms.GunaTextBox txtFilePath;
         private Siticone.UI.WinForms.SiticoneRoundedGradientButton btnStartService;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer updater;
+        private System.Windows.Forms.Timer dataChecker;
     }
 }

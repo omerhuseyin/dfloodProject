@@ -21,16 +21,16 @@ namespace DFlood.Forms
             SettingController.Start();
         }
 
-        private int bootTp, topMostCounter;
+        private int bootTp, bootScrMd, bootScrPnt, bootDcCheck, bootAutoSave, bootUnlmtd, bootDelete;
         private System.Media.SoundPlayer snd = new SoundPlayer();
 
         private DiscordRpc.EventHandlers handlers;
         private DiscordRpc.RichPresence presence;
 
-        private void Alert(string msg, Form_Alert.enmType type)
+        private void Alert(string msg, string dsc, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
-            frm.showAlert(msg, type);
+            frm.showAlert(msg, dsc, type);
         }
 
         private void DFloodDiscordRPCClient()
@@ -90,25 +90,149 @@ namespace DFlood.Forms
             SaveSetting();
         }
 
+        private void SetSecureMode_CheckedChanged(object sender, EventArgs e)
+        {
+            bootScrMd = bootScrMd + 1;
+
+            if (bootScrMd > 1)
+            {
+                snd.SoundLocation = "openSound.wav";
+                snd.Play();
+                if (SetSecureMode.Checked == true)
+                {
+                    this.TopMost = true;
+                    this.Alert("Başarılı", "Güvenli Mod Başarıyla Aktif Edildi", Form_Alert.enmType.Success);
+                }
+                else if (SetSecureMode.Checked == false)
+                {
+                    this.TopMost = false;
+                    this.Alert("Başarılı", "Güvenli Mod Başarıyla Deaktif Edildi", Form_Alert.enmType.Warning);
+                }
+            }
+        }
+
+        private void SetUnlimitedFlood_CheckedChanged(object sender, EventArgs e)
+        {
+            bootUnlmtd = bootUnlmtd + 1;
+
+            if (bootUnlmtd > 1)
+            {
+                snd.SoundLocation = "openSound.wav";
+                snd.Play();
+                if (SetUnlimitedFlood.Checked == true)
+                {
+                    this.TopMost = true;
+                    this.Alert("Başarılı", "Sınırsız Flood Başarıyla Aktif Edildi", Form_Alert.enmType.Success);
+                }
+                else if (SetUnlimitedFlood.Checked == false)
+                {
+                    this.TopMost = false;
+                    this.Alert("Başarılı", "Sınırsız Flood Başarıyla Deaktif Edildi", Form_Alert.enmType.Warning);
+                }
+            }
+        }
+
+        private void SetSecurityPoint_CheckedChanged(object sender, EventArgs e)
+        {
+            bootScrPnt = bootScrPnt + 1;
+
+            if (bootScrPnt > 1)
+            {
+                snd.SoundLocation = "openSound.wav";
+                snd.Play();
+                if (SetSecurityPoint.Checked == true)
+                {
+                    this.TopMost = true;
+                    this.Alert("Başarılı", "Güvenlik Puanı Kontrolü Aktif Edildi", Form_Alert.enmType.Success);
+                }
+                else if (SetSecurityPoint.Checked == false)
+                {
+                    this.TopMost = false;
+                    this.Alert("Başarılı", "Güvenlik Puanı Kontrolü Deaktif Edildi", Form_Alert.enmType.Warning);
+                }
+            }
+        }
+
+        private void DiscordTaskChecker_CheckedChanged(object sender, EventArgs e)
+        {
+            bootDcCheck = bootDcCheck + 1;
+
+            if (bootDcCheck > 1)
+            {
+                snd.SoundLocation = "openSound.wav";
+                snd.Play();
+                if (DiscordTaskChecker.Checked == true)
+                {
+                    this.TopMost = true;
+                    this.Alert("Başarılı", "Discord Kontrolcüsü Aktif Edildi", Form_Alert.enmType.Success);
+                }
+                else if (DiscordTaskChecker.Checked == false)
+                {
+                    this.TopMost = false;
+                    this.Alert("Başarılı", "Discord Kontrolcüsü Deaktif Edildi", Form_Alert.enmType.Warning);
+                }
+            }
+        }
+
+        private void AutoSave_CheckedChanged(object sender, EventArgs e)
+        {
+            bootAutoSave = bootAutoSave + 1;
+
+            if (bootAutoSave > 1)
+            {
+                snd.SoundLocation = "openSound.wav";
+                snd.Play();
+                if (AutoSave.Checked == true)
+                {
+                    this.TopMost = true;
+                    this.Alert("Başarılı", "Otomatik Ayar Kaydetme Açık", Form_Alert.enmType.Success);
+                }
+                else if (AutoSave.Checked == false)
+                {
+                    this.TopMost = false;
+                    this.Alert("Başarılı", "Otomatik Ayar Kaydetme Kapatıldı", Form_Alert.enmType.Warning);
+                }
+            }
+        }
+
+        private void MessageDeleteAfter_CheckedChanged(object sender, EventArgs e)
+        {
+            bootDelete = bootDelete + 1;
+
+            if (bootDelete > 1)
+            {
+                snd.SoundLocation = "openSound.wav";
+                snd.Play();
+                if (MessageDeleteAfter.Checked == true)
+                {
+                    this.TopMost = true;
+                    this.Alert("Başarılı", "Mesaj Silici Aktif Edildi", Form_Alert.enmType.Success);
+                }
+                else if (MessageDeleteAfter.Checked == false)
+                {
+                    this.TopMost = false;
+                    this.Alert("Başarılı", "Mesaj Silici Deaktif Edildi", Form_Alert.enmType.Warning);
+                }
+            }
+        }
+
         private void SetTopMost_CheckedChanged(object sender, EventArgs e)
         {
             bootTp = bootTp + 1;
+
             if (bootTp > 1)
             {
                 snd.SoundLocation = "openSound.wav";
                 snd.Play();
-
-                topMostCounter = topMostCounter + 1;
-
-                if (topMostCounter % 2 == 1)
+                if (SetTopMost.Checked == true)
                 {
                     this.TopMost = true;
-                    this.Alert("Enabled", Form_Alert.enmType.Success);
+                    this.Alert("Başarılı", "Pencere Sabitleyici Aktif Edildi", Form_Alert.enmType.Success);
                 }
-                else
+                else if (SetTopMost.Checked == false)
                 {
                     this.TopMost = false;
-                    this.Alert("Disabled", Form_Alert.enmType.Warning);
+                    this.Alert("Başarılı", "Pencere Sabitleyici Deaktif Edildi", Form_Alert.enmType.Warning);
                 }
             }
         }

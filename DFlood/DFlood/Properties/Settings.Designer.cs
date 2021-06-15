@@ -154,5 +154,41 @@ namespace DFlood.Properties {
                 this["FloodCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int TopTimeFloods {
+            get {
+                return ((int)(this["TopTimeFloods"]));
+            }
+            set {
+                this["TopTimeFloods"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int TopTimeDeleteFloods {
+            get {
+                return ((int)(this["TopTimeDeleteFloods"]));
+            }
+            set {
+                this["TopTimeDeleteFloods"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int TopTimeSeconds {
+            get {
+                return ((int)(this["TopTimeSeconds"]));
+            }
+            set {
+                this["TopTimeSeconds"] = value;
+            }
+        }
     }
 }

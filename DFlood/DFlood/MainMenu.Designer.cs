@@ -30,7 +30,9 @@ namespace DFlood
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnContact = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCopyright = new FontAwesome.Sharp.IconButton();
             this.btnSponsoredServers = new FontAwesome.Sharp.IconButton();
@@ -68,6 +70,7 @@ namespace DFlood
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(71)))));
+            this.panelMenu.Controls.Add(this.btnContact);
             this.panelMenu.Controls.Add(this.label2);
             this.panelMenu.Controls.Add(this.btnCopyright);
             this.panelMenu.Controls.Add(this.btnSponsoredServers);
@@ -81,16 +84,38 @@ namespace DFlood
             this.panelMenu.Size = new System.Drawing.Size(178, 460);
             this.panelMenu.TabIndex = 0;
             // 
+            // btnContact
+            // 
+            this.btnContact.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnContact.FlatAppearance.BorderSize = 0;
+            this.btnContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContact.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnContact.ForeColor = System.Drawing.Color.White;
+            this.btnContact.IconChar = FontAwesome.Sharp.IconChar.At;
+            this.btnContact.IconColor = System.Drawing.Color.White;
+            this.btnContact.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnContact.IconSize = 32;
+            this.btnContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnContact.Location = new System.Drawing.Point(0, 350);
+            this.btnContact.Name = "btnContact";
+            this.btnContact.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnContact.Size = new System.Drawing.Size(178, 50);
+            this.btnContact.TabIndex = 8;
+            this.btnContact.Text = "Bize Ulaşın";
+            this.btnContact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnContact.UseVisualStyleBackColor = true;
+            this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 436);
+            this.label2.Location = new System.Drawing.Point(27, 435);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 15);
+            this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Her Hakkı Saklıdır | 2021";
+            this.label2.Text = "© DFlood 2021 | v1.0.1";
             // 
             // btnCopyright
             // 
@@ -104,10 +129,10 @@ namespace DFlood
             this.btnCopyright.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCopyright.IconSize = 32;
             this.btnCopyright.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopyright.Location = new System.Drawing.Point(0, 320);
+            this.btnCopyright.Location = new System.Drawing.Point(0, 300);
             this.btnCopyright.Name = "btnCopyright";
             this.btnCopyright.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnCopyright.Size = new System.Drawing.Size(178, 55);
+            this.btnCopyright.Size = new System.Drawing.Size(178, 50);
             this.btnCopyright.TabIndex = 6;
             this.btnCopyright.Text = "Yasal Uyarı";
             this.btnCopyright.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -126,10 +151,10 @@ namespace DFlood
             this.btnSponsoredServers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSponsoredServers.IconSize = 32;
             this.btnSponsoredServers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSponsoredServers.Location = new System.Drawing.Point(0, 265);
+            this.btnSponsoredServers.Location = new System.Drawing.Point(0, 250);
             this.btnSponsoredServers.Name = "btnSponsoredServers";
             this.btnSponsoredServers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnSponsoredServers.Size = new System.Drawing.Size(178, 55);
+            this.btnSponsoredServers.Size = new System.Drawing.Size(178, 50);
             this.btnSponsoredServers.TabIndex = 5;
             this.btnSponsoredServers.Text = "Sunucular";
             this.btnSponsoredServers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -148,10 +173,10 @@ namespace DFlood
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSettings.IconSize = 32;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 210);
+            this.btnSettings.Location = new System.Drawing.Point(0, 200);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnSettings.Size = new System.Drawing.Size(178, 55);
+            this.btnSettings.Size = new System.Drawing.Size(178, 50);
             this.btnSettings.TabIndex = 4;
             this.btnSettings.Text = "Ayarlar";
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -170,10 +195,10 @@ namespace DFlood
             this.btnServiceStarter.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnServiceStarter.IconSize = 32;
             this.btnServiceStarter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServiceStarter.Location = new System.Drawing.Point(0, 155);
+            this.btnServiceStarter.Location = new System.Drawing.Point(0, 150);
             this.btnServiceStarter.Name = "btnServiceStarter";
             this.btnServiceStarter.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnServiceStarter.Size = new System.Drawing.Size(178, 55);
+            this.btnServiceStarter.Size = new System.Drawing.Size(178, 50);
             this.btnServiceStarter.TabIndex = 3;
             this.btnServiceStarter.Text = "Servis Başlatıcısı";
             this.btnServiceStarter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,7 +220,7 @@ namespace DFlood
             this.btnStats.Location = new System.Drawing.Point(0, 100);
             this.btnStats.Name = "btnStats";
             this.btnStats.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnStats.Size = new System.Drawing.Size(178, 55);
+            this.btnStats.Size = new System.Drawing.Size(178, 50);
             this.btnStats.TabIndex = 2;
             this.btnStats.Text = "İstatistikler";
             this.btnStats.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -339,18 +364,18 @@ namespace DFlood
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(136)))), ((int)(((byte)(34)))));
-            this.lblTime.Location = new System.Drawing.Point(210, 168);
+            this.lblTime.Location = new System.Drawing.Point(304, 125);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(15, 22);
+            this.lblTime.Size = new System.Drawing.Size(105, 22);
             this.lblTime.TabIndex = 1;
-            this.lblTime.Text = ".";
+            this.lblTime.Text = "undefined";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox1.Image = global::DFlood.Properties.Resources.dflood;
-            this.pictureBox1.Location = new System.Drawing.Point(275, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(91, 106);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(124, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -378,6 +403,7 @@ namespace DFlood
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ana Sayfa";
@@ -425,5 +451,6 @@ namespace DFlood
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer TopMostChecker;
+        private FontAwesome.Sharp.IconButton btnContact;
     }
 }

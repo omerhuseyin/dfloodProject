@@ -38,7 +38,7 @@ namespace DFlood
 
         private int x, y;
 
-        public void showAlert(string msg, enmType type)
+        public void showAlert(string msg, string dsc, enmType type)
         {
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
@@ -89,6 +89,7 @@ namespace DFlood
             }
 
             this.lblMsg.Text = msg;
+            this.lblDescription.Text = dsc;
 
             this.Show();
             this.action = enmAction.start;

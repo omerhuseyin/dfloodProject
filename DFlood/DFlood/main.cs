@@ -23,22 +23,32 @@ namespace DFlood
             WebClient webClient = new WebClient();
         }
 
-        private int topMostCounter, startStopCounter, messageCounter, nextWord, keyWordsCount, topTimeFloods;
+        private int startStopCounter, messageCounter, nextWord, keyWordsCount;
         private int messageSendInterval = 1, min = 2, max = 6, floodCount = 30;
         private System.Media.SoundPlayer snd = new SoundPlayer();
         private Random rnd = new Random();
         private OpenFileDialog ofd = new OpenFileDialog();
         private OperatingSystem OS = System.Environment.OSVersion;
         private DateTime today = DateTime.Now;
-
-        private DiscordRpc.EventHandlers handlers;
-        private DiscordRpc.RichPresence presence;
+        private static int topTimeDeletes, topTimeFloods;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void Get()
+        {
+            topTimeFloods = Properties.Settings.Default.TopTimeFloods;
+            topTimeDeletes = Properties.Settings.Default.TopTimeDeleteFloods;
+        }
+
+        private static void Save()
+        {
+            Properties.Settings.Default.TopTimeFloods = topTimeFloods;
+            Properties.Settings.Default.TopTimeDeleteFloods = topTimeDeletes;
+        }
 
         private static void sendWebHook(string Url, string msg, string Username)
         {
@@ -55,10 +65,10 @@ namespace DFlood
             });
         }
 
-        private void Alert(string msg, Form_Alert.enmType type)
+        private void Alert(string msg, string dsc, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
-            frm.showAlert(msg, type);
+            frm.showAlert(msg, dsc, type);
         }
 
         private void formMover_MouseDown(object sender, MouseEventArgs e)
@@ -66,54 +76,6 @@ namespace DFlood
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void DFloodDiscordRPCClient()
-        {
-            this.handlers = default(DiscordRpc.EventHandlers);
-            DiscordRpc.Initialize("852261353480650752", ref this.handlers, true, null);
-            this.handlers = default(DiscordRpc.EventHandlers);
-            DiscordRpc.Initialize("852261353480650752", ref this.handlers, true, null);
-            this.presence.details = "DFlood Discord Trainer";
-            this.presence.state = "Main Menu";
-            this.presence.largeImageKey = "logo";
-            this.presence.smallImageKey = "logo";
-            this.presence.largeImageText = "DFlood Spam Trainer";
-            this.presence.smallImageText = "Suan Aktif!";
-            DiscordRpc.UpdatePresence(ref this.presence);
-        }/*
-
-        public void GetPersonalUserSettings()
-        {
-            secureMode.Checked = Properties.Settings.Default.IsSecureMode;
-            unlimitedFlood.Checked = Properties.Settings.Default.IsUnlimitedFlood;
-            topMost.Checked = Properties.Settings.Default.IsTopMost;
-            deleteAfter.Checked = Properties.Settings.Default.IsDeleteAfter;
-            txtMessageSenderIntervalMax.Value = Properties.Settings.Default.MaxInvertal;
-            txtMessageSenderIntervalMin.Value = Properties.Settings.Default.MinInterval;
-            txtFloodCount.Value = Properties.Settings.Default.FloodNumber;
-            messageDeleteInterval.Value = Properties.Settings.Default.msgDeleteInterval;
-            topTimeFloods = Properties.Settings.Default.GetTopFloodNumber;
-            min = Convert.ToInt16(txtMessageSenderIntervalMin.Value);
-            max = Convert.ToInt16(txtMessageSenderIntervalMax.Value);
-        }*/
-
-        /*
-                private void SavePersonalUserSettings()
-                {
-                    Properties.Settings.Default.IsSecureMode = secureMode.Checked;
-                    Properties.Settings.Default.IsUnlimitedFlood = unlimitedFlood.Checked;
-                    Properties.Settings.Default.IsTopMost = topMost.Checked;
-                    Properties.Settings.Default.IsDeleteAfter = deleteAfter.Checked;
-                    Properties.Settings.Default.MinInterval = Convert.ToInt16(txtMessageSenderIntervalMin.Value);
-                    Properties.Settings.Default.MaxInvertal = Convert.ToInt16(txtMessageSenderIntervalMax.Value);
-                    Properties.Settings.Default.msgDeleteInterval = Convert.ToInt16(messageDeleteInterval.Value);
-                    Properties.Settings.Default.FloodNumber = Convert.ToInt16(txtFloodCount.Value);
-                    Properties.Settings.Default.GetTopFloodNumber = topTimeFloods;
-                    min = Convert.ToInt16(txtMessageSenderIntervalMin.Value);
-                    max = Convert.ToInt16(txtMessageSenderIntervalMax.Value);
-                    Properties.Settings.Default.Save();
-                }
-        */
 
         private void FloodService()
         {
@@ -126,15 +88,18 @@ namespace DFlood
 
             SendKeys.Send(keywords.SelectedItem.ToString());
             SendKeys.Send("{ENTER}");
-
+            Properties.Settings.Default.TopTimeFloods = topTimeFloods;
+            topTimeFloods = topTimeFloods + messageCounter;
             messageCounter = messageCounter + 1;
-            messageSendInterval = rnd.Next(min, max);
 
-            topTimeFloods = topTimeFloods + 1;
+            Properties.Settings.Default.Save();
+
+            messageSendInterval = rnd.Next(min, max);
         }
 
         private void MessageDeleteEventListener()
         {
+            topTimeDeletes = topTimeDeletes + 1;
             SendKeys.Send("{UP}");
             System.Threading.Thread.Sleep(100);
             SendKeys.Send("^(a)");
@@ -144,6 +109,9 @@ namespace DFlood
             SendKeys.Send("{ENTER}");
             System.Threading.Thread.Sleep(100);
             SendKeys.Send("{ENTER}");
+
+            Properties.Settings.Default.TopTimeDeleteFloods = topTimeDeletes;
+            Properties.Settings.Default.Save();
         }
 
         private void messageTimer_Tick(object sender, EventArgs e)
@@ -156,6 +124,15 @@ namespace DFlood
                 {
                     if (Properties.Settings.Default.IsDeleteAfterMode == true)
                     {
+                        topTimeDeletes = topTimeDeletes + 1;
+                        messageCounter = messageCounter + 1;
+                        topTimeFloods = topTimeFloods + messageCounter;
+
+                        Properties.Settings.Default.TopTimeFloods = topTimeFloods;
+                        Properties.Settings.Default.TopTimeDeleteFloods = topTimeDeletes;
+                        Properties.Settings.Default.Save();
+
+                        messageSendInterval = rnd.Next(min, max);
                         MessageDeleteEventListener();
                         FloodService();
                     }
@@ -191,69 +168,9 @@ namespace DFlood
             MessageDeleteEventListener();
         }
 
-        private void messageRefreshTime_MouseUp(object sender, MouseEventArgs e)
-        {
-            tmrVirusTotal.Stop();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            var webClient = new WebClient();
-            string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
-            dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
-            webClient.Dispose();
-            var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
-            var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
-            var ipadress = $"**IP Adresi : ** {dnsString}";
-            var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
-            var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
-            var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
-            var platform = $"**Platform : ** {OS.Platform.ToString()}";
-            var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
-            var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
-            var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
-            sendWebHook("https://discord.com/api/webhooks/852933349000871996/bRqRbTKlp2xuDYqSpHGUFLEOzoyjH0TJKgtpB8emrhBIBD07luTGHqWd_qRcWcMVwwEc", $"**DFlood Trainer'e Yeni Çıkış Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n--------------------------------------------------------------------", "DFlood Services");
-            Application.Exit();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-        }
-
-        private void ofdTimer_Tick(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         [Obsolete]
         private void main_Load(object sender, EventArgs e)
         {
-            var webClient = new WebClient();
-            string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
-            dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
-            webClient.Dispose();
-            var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
-            var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
-            var ipadress = $"**IP Adresi : ** {dnsString}";
-            var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
-            var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
-            var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
-            var platform = $"**Platform : ** {OS.Platform.ToString()}";
-            var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
-            var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
-            var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
-            DFloodDiscordRPCClient();
-
-            sendWebHook("https://discord.com/api/webhooks/852933515171201045/1P_9zIbWb7n5QnGwiNx2yLQb_qMqAEMLP2KmCYT2covhtLsu4vnhBVpK1eRKG0XnZMmX", $"**DFlood Trainer'e Yeni Giriş Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n--------------------------------------------------------------------", "DFlood Services");
-        }
-
-        private void messageRefreshTime_MouseDown(object sender, MouseEventArgs e)
-        {
-            tmrVirusTotal.Start();
         }
 
         private void btnStartService_Click(object sender, EventArgs e)
@@ -268,14 +185,15 @@ namespace DFlood
                 txtFilePath.Enabled = false;
                 btnImport.Enabled = false;
                 messageTimer.Start();
-                this.Alert("Flood Service Started", Form_Alert.enmType.Success);
+                this.Alert("Başarılı", "Flood Hizmeti Başlatıldı", Form_Alert.enmType.Success);
             }
             else if (startStopCounter % 2 == 0)
             {
+                Properties.Settings.Default.Save();
                 snd.SoundLocation = "success.wav";
                 btnStartService.Text = "Hizmeti Başlat";
                 snd.Play();
-                this.Alert("Flood Service Stopped", Form_Alert.enmType.Warning);
+                this.Alert("Başarılı", "Flood Hizmeti Durduruldu", Form_Alert.enmType.Warning);
                 messageCounter = 0;
                 startStopCounter = 0;
                 messageTimer.Stop();
@@ -305,7 +223,7 @@ namespace DFlood
                 snd.SoundLocation = "success.wav";
                 snd.Play();
                 btnStartService.Enabled = true;
-                this.Alert($"Import Successfully", Form_Alert.enmType.Success);
+                this.Alert($"Başarılı", "Metin Dosyası Başarıyla Aktarıldı", Form_Alert.enmType.Success);
 
                 txtFilePath.Text = ofd.FileName;
             }
@@ -315,8 +233,6 @@ namespace DFlood
                 btnStartService.Enabled = false;
             }
         }
-
-  
 
         private void txtFilePath_TextChanged(object sender, EventArgs e)
         {

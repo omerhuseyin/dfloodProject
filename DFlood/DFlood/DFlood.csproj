@@ -132,9 +132,6 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
-    <Reference Include="Dropbox.Api, Version=6.7.0.0, Culture=neutral, PublicKeyToken=310f0e82fbb45d01, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dropbox.Api.6.7.0\lib\netstandard2.0\Dropbox.Api.dll</HintPath>
-    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -142,9 +139,6 @@
       <HintPath>..\..\..\..\Desktop\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Siticone.UI">
       <HintPath>..\..\..\..\Desktop\Siticone.UI.dll</HintPath>
     </Reference>
@@ -168,11 +162,11 @@
     </Compile>
     <Compile Include="DFLoodDiscordRPC\Discord.cs" />
     <Compile Include="DiscordSocketClient.cs" />
-    <Compile Include="Forms\FormService.cs">
+    <Compile Include="Forms\FormServers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormService.Designer.cs">
-      <DependentUpon>FormService.cs</DependentUpon>
+    <Compile Include="Forms\FormServers.Designer.cs">
+      <DependentUpon>FormServers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSetting.cs">
       <SubType>Form</SubType>
@@ -224,8 +218,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\FormService.resx">
-      <DependentUpon>FormService.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormServers.resx">
+      <DependentUpon>FormServers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
@@ -307,6 +301,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\deletemessages1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usaflag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trflag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
