@@ -1,5 +1,4 @@
-﻿//coded by wés <3
-using DFlood.DFLoodDiscordRPC;
+﻿using DFlood.DFLoodDiscordRPC;
 using System;
 using System.Diagnostics;
 using System.IO;
