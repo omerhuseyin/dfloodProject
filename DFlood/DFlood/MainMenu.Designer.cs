@@ -55,6 +55,7 @@ namespace DFlood
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.TopMostChecker = new System.Windows.Forms.Timer(this.components);
+            this.totalTimeCalculator = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -393,6 +394,11 @@ namespace DFlood
             // 
             this.TopMostChecker.Tick += new System.EventHandler(this.TopMostChecker_Tick);
             // 
+            // totalTimeCalculator
+            // 
+            this.totalTimeCalculator.Interval = 1000;
+            this.totalTimeCalculator.Tick += new System.EventHandler(this.totalTimeCalculator_Tick);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,5 +458,6 @@ namespace DFlood
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer TopMostChecker;
         private FontAwesome.Sharp.IconButton btnContact;
+        private System.Windows.Forms.Timer totalTimeCalculator;
     }
 }

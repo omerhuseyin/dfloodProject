@@ -35,19 +35,13 @@ namespace DFlood.Forms
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTotalTimes = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuGradientPanel2 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.lblTotalDeletes = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.lblTotalFloods = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.checker = new System.Windows.Forms.Timer(this.components);
             this.bunifuGradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.bunifuGradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +59,7 @@ namespace DFlood.Forms
             this.bunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.DeepPink;
             this.bunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.DodgerBlue;
             this.bunifuGradientPanel3.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(60)))), ((int)(((byte)(212)))));
-            this.bunifuGradientPanel3.Location = new System.Drawing.Point(439, 96);
+            this.bunifuGradientPanel3.Location = new System.Drawing.Point(348, 96);
             this.bunifuGradientPanel3.Name = "bunifuGradientPanel3";
             this.bunifuGradientPanel3.Quality = 10;
             this.bunifuGradientPanel3.Size = new System.Drawing.Size(150, 120);
@@ -85,7 +79,7 @@ namespace DFlood.Forms
             // 
             this.lblTotalTimes.AutoSize = true;
             this.lblTotalTimes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalTimes.Location = new System.Drawing.Point(51, 50);
+            this.lblTotalTimes.Location = new System.Drawing.Point(27, 50);
             this.lblTotalTimes.Name = "lblTotalTimes";
             this.lblTotalTimes.Size = new System.Drawing.Size(51, 22);
             this.lblTotalTimes.TabIndex = 2;
@@ -101,55 +95,6 @@ namespace DFlood.Forms
             this.label5.TabIndex = 1;
             this.label5.Text = "Çalışma Süresi";
             // 
-            // bunifuGradientPanel2
-            // 
-            this.bunifuGradientPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
-            this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel2.BorderRadius = 35;
-            this.bunifuGradientPanel2.Controls.Add(this.lblTotalDeletes);
-            this.bunifuGradientPanel2.Controls.Add(this.pictureBox2);
-            this.bunifuGradientPanel2.Controls.Add(this.label3);
-            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.Blue;
-            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.DeepSkyBlue;
-            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.DodgerBlue;
-            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.Aqua;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(250, 96);
-            this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
-            this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(150, 120);
-            this.bunifuGradientPanel2.TabIndex = 0;
-            // 
-            // lblTotalDeletes
-            // 
-            this.lblTotalDeletes.AutoSize = true;
-            this.lblTotalDeletes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalDeletes.Location = new System.Drawing.Point(51, 50);
-            this.lblTotalDeletes.Name = "lblTotalDeletes";
-            this.lblTotalDeletes.Size = new System.Drawing.Size(51, 22);
-            this.lblTotalDeletes.TabIndex = 2;
-            this.lblTotalDeletes.Text = "NaN";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::DFlood.Properties.Resources.deletemessages1;
-            this.pictureBox2.Location = new System.Drawing.Point(107, 88);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(25, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Silinen Flood";
-            // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -163,7 +108,7 @@ namespace DFlood.Forms
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.DarkOrange;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(62, 96);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(138, 96);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(150, 120);
@@ -173,7 +118,7 @@ namespace DFlood.Forms
             // 
             this.lblTotalFloods.AutoSize = true;
             this.lblTotalFloods.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalFloods.Location = new System.Drawing.Point(50, 50);
+            this.lblTotalFloods.Location = new System.Drawing.Point(25, 50);
             this.lblTotalFloods.Name = "lblTotalFloods";
             this.lblTotalFloods.Size = new System.Drawing.Size(51, 22);
             this.lblTotalFloods.TabIndex = 2;
@@ -199,10 +144,10 @@ namespace DFlood.Forms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // timer1
+            // checker
             // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.checker.Interval = 1000;
+            this.checker.Tick += new System.EventHandler(this.checker_Tick);
             // 
             // FormStats
             // 
@@ -211,7 +156,6 @@ namespace DFlood.Forms
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
             this.ClientSize = new System.Drawing.Size(653, 346);
             this.Controls.Add(this.bunifuGradientPanel3);
-            this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.Color.White;
@@ -222,9 +166,6 @@ namespace DFlood.Forms
             this.bunifuGradientPanel3.ResumeLayout(false);
             this.bunifuGradientPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.bunifuGradientPanel2.ResumeLayout(false);
-            this.bunifuGradientPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -235,17 +176,13 @@ namespace DFlood.Forms
         #endregion
 
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
-        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblTotalTimes;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTotalDeletes;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTotalFloods;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer checker;
     }
 }

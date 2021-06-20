@@ -30,35 +30,35 @@ namespace DFlood.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServers));
-            this.btnMafia = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnMafia = new Guna.UI.WinForms.GunaCirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnMafia)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnMafia
-            // 
-            this.btnMafia.BaseColor = System.Drawing.Color.White;
-            this.btnMafia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMafia.Image = ((System.Drawing.Image)(resources.GetObject("btnMafia.Image")));
-            this.btnMafia.Location = new System.Drawing.Point(268, 100);
-            this.btnMafia.Name = "btnMafia";
-            this.btnMafia.Size = new System.Drawing.Size(97, 96);
-            this.btnMafia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMafia.TabIndex = 0;
-            this.btnMafia.TabStop = false;
-            this.btnMafia.UseTransfarantBackground = false;
-            this.btnMafia.Click += new System.EventHandler(this.btnMafia_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(257, 205);
+            this.label1.Location = new System.Drawing.Point(275, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "MAFIA™ Community";
+            // 
+            // btnMafia
+            // 
+            this.btnMafia.BaseColor = System.Drawing.Color.White;
+            this.btnMafia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMafia.Image = ((System.Drawing.Image)(resources.GetObject("btnMafia.Image")));
+            this.btnMafia.Location = new System.Drawing.Point(295, 110);
+            this.btnMafia.Name = "btnMafia";
+            this.btnMafia.Size = new System.Drawing.Size(79, 78);
+            this.btnMafia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMafia.TabIndex = 0;
+            this.btnMafia.TabStop = false;
+            this.btnMafia.UseTransfarantBackground = false;
+            this.btnMafia.Click += new System.EventHandler(this.btnMafia_Click);
             // 
             // FormServers
             // 

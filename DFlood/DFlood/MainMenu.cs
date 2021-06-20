@@ -44,6 +44,7 @@ namespace DFlood
 
         private DiscordRpc.EventHandlers handlers;
         private DiscordRpc.RichPresence presence;
+        private int totalTimes;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -215,6 +216,8 @@ namespace DFlood
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            totalTimes = Properties.Settings.Default.TopTimeSeconds;
+            totalTimeCalculator.Start();
             DFloodDiscordRPCClient();
             clock.Start();
             TopMostChecker.Start();
@@ -260,6 +263,15 @@ namespace DFlood
 
         private void btnContact_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new FormContact());
+        }
+
+        private void totalTimeCalculator_Tick(object sender, EventArgs e)
+        {
+            totalTimes = totalTimes + 1;
+            Properties.Settings.Default.TopTimeSeconds = totalTimes;
+            Properties.Settings.Default.Save();
         }
     }
 }
