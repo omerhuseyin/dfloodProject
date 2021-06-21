@@ -56,6 +56,7 @@ namespace DFlood
             this.totalTimeCalculator = new System.Windows.Forms.Timer(this.components);
             this.fadeOpacity = new System.Windows.Forms.Timer(this.components);
             this.fadeOpacity2 = new System.Windows.Forms.Timer(this.components);
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -391,6 +392,11 @@ namespace DFlood
             this.fadeOpacity2.Interval = 40;
             this.fadeOpacity2.Tick += new System.EventHandler(this.fadeOpacity2_Tick);
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 15;
+            this.gunaElipse1.TargetControl = this;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,5 +457,6 @@ namespace DFlood
         private System.Windows.Forms.Timer totalTimeCalculator;
         private System.Windows.Forms.Timer fadeOpacity;
         private System.Windows.Forms.Timer fadeOpacity2;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
     }
 }
