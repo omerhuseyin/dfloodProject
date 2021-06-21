@@ -74,7 +74,7 @@ namespace DFlood.Forms
             // grpSendSettings
             // 
             this.grpSendSettings.BackColor = System.Drawing.Color.Transparent;
-            this.grpSendSettings.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.grpSendSettings.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.grpSendSettings.BorderColor = System.Drawing.Color.Gainsboro;
             this.grpSendSettings.Controls.Add(this.SenderFloodCount);
             this.grpSendSettings.Controls.Add(this.label2);
@@ -236,7 +236,7 @@ namespace DFlood.Forms
             // grpWorkSettings
             // 
             this.grpWorkSettings.BackColor = System.Drawing.Color.Transparent;
-            this.grpWorkSettings.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.grpWorkSettings.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.grpWorkSettings.BorderColor = System.Drawing.Color.Gainsboro;
             this.grpWorkSettings.Controls.Add(this.MessageDeleteInterval);
             this.grpWorkSettings.Controls.Add(this.MessageDeleteAfter);
@@ -314,7 +314,7 @@ namespace DFlood.Forms
             // gunaGroupBox1
             // 
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.gunaGroupBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.Controls.Add(this.SetSecurityPoint);
             this.gunaGroupBox1.Controls.Add(this.SetTopMost);
@@ -409,7 +409,7 @@ namespace DFlood.Forms
             // gunaGroupBox2
             // 
             this.gunaGroupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.gunaGroupBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.gunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox2.Controls.Add(this.langUs);
             this.gunaGroupBox2.Controls.Add(this.label9);
@@ -503,7 +503,7 @@ namespace DFlood.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(653, 346);
             this.Controls.Add(this.gunaGroupBox2);
             this.Controls.Add(this.gunaGroupBox1);

@@ -40,37 +40,37 @@ namespace DFlood
             this.btnServiceStarter = new FontAwesome.Sharp.IconButton();
             this.btnStats = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnVirusTotal = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.PictureBox();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.formElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnExit = new System.Windows.Forms.PictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dfloodIcon = new System.Windows.Forms.PictureBox();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.TopMostChecker = new System.Windows.Forms.Timer(this.components);
             this.totalTimeCalculator = new System.Windows.Forms.Timer(this.components);
+            this.fadeOpacity = new System.Windows.Forms.Timer(this.components);
+            this.fadeOpacity2 = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVirusTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.panelDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dfloodIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(71)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panelMenu.Controls.Add(this.btnContact);
             this.panelMenu.Controls.Add(this.label2);
             this.panelMenu.Controls.Add(this.btnCopyright);
@@ -112,11 +112,11 @@ namespace DFlood
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 435);
+            this.label2.Location = new System.Drawing.Point(48, 435);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 16);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 7;
-            this.label2.Text = "© DFlood 2021 | v1.0.1";
+            this.label2.Text = "© DFlood 2021";
             // 
             // btnCopyright
             // 
@@ -157,7 +157,7 @@ namespace DFlood
             this.btnSponsoredServers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnSponsoredServers.Size = new System.Drawing.Size(178, 50);
             this.btnSponsoredServers.TabIndex = 5;
-            this.btnSponsoredServers.Text = "Sunucular";
+            this.btnSponsoredServers.Text = "Sponsorlar";
             this.btnSponsoredServers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSponsoredServers.UseVisualStyleBackColor = true;
             this.btnSponsoredServers.Click += new System.EventHandler(this.btnSponsoredServers_Click);
@@ -169,7 +169,7 @@ namespace DFlood
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Whmcs;
+            this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Tools;
             this.btnSettings.IconColor = System.Drawing.Color.White;
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSettings.IconSize = 32;
@@ -191,7 +191,7 @@ namespace DFlood
             this.btnServiceStarter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServiceStarter.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnServiceStarter.ForeColor = System.Drawing.Color.White;
-            this.btnServiceStarter.IconChar = FontAwesome.Sharp.IconChar.Play;
+            this.btnServiceStarter.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
             this.btnServiceStarter.IconColor = System.Drawing.Color.White;
             this.btnServiceStarter.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnServiceStarter.IconSize = 32;
@@ -213,7 +213,7 @@ namespace DFlood
             this.btnStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStats.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnStats.ForeColor = System.Drawing.Color.White;
-            this.btnStats.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
+            this.btnStats.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.btnStats.IconColor = System.Drawing.Color.White;
             this.btnStats.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStats.IconSize = 32;
@@ -230,7 +230,6 @@ namespace DFlood
             // 
             // panelLogo
             // 
-            this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Controls.Add(this.btnHome);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -238,24 +237,13 @@ namespace DFlood
             this.panelLogo.Size = new System.Drawing.Size(178, 100);
             this.panelLogo.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(136)))), ((int)(((byte)(34)))));
-            this.label1.Location = new System.Drawing.Point(94, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "DFlood";
-            // 
             // btnHome
             // 
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.Image = global::DFlood.Properties.Resources.dflood;
-            this.btnHome.Location = new System.Drawing.Point(12, 18);
+            this.btnHome.Image = global::DFlood.Properties.Resources.dflood2;
+            this.btnHome.Location = new System.Drawing.Point(51, 12);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(61, 63);
+            this.btnHome.Size = new System.Drawing.Size(73, 75);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
@@ -263,12 +251,12 @@ namespace DFlood
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panelTitleBar.Controls.Add(this.btnVirusTotal);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
-            this.panelTitleBar.Controls.Add(this.btnExit);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
+            this.panelTitleBar.Controls.Add(this.btnExit);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(178, 0);
             this.panelTitleBar.Name = "panelTitleBar";
@@ -280,7 +268,7 @@ namespace DFlood
             // 
             this.btnVirusTotal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVirusTotal.Image = global::DFlood.Properties.Resources.green_circle;
-            this.btnVirusTotal.Location = new System.Drawing.Point(640, 12);
+            this.btnVirusTotal.Location = new System.Drawing.Point(640, 5);
             this.btnVirusTotal.Name = "btnVirusTotal";
             this.btnVirusTotal.Size = new System.Drawing.Size(17, 17);
             this.btnVirusTotal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -291,7 +279,7 @@ namespace DFlood
             // 
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.Image = global::DFlood.Properties.Resources.yellow_circle;
-            this.btnMinimize.Location = new System.Drawing.Point(617, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(622, 5);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(17, 17);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -309,21 +297,9 @@ namespace DFlood
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Ana Sayfa";
             // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Image = global::DFlood.Properties.Resources.red_circle;
-            this.btnExit.Location = new System.Drawing.Point(594, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(17, 17);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnExit.TabIndex = 0;
-            this.btnExit.TabStop = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // iconCurrentChildForm
             // 
-            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.iconCurrentChildForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(122)))), ((int)(((byte)(225)))));
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(122)))), ((int)(((byte)(225)))));
@@ -335,14 +311,21 @@ namespace DFlood
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
-            // formElipse
+            // btnExit
             // 
-            this.formElipse.ElipseRadius = 15;
-            this.formElipse.TargetControl = this;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Image = global::DFlood.Properties.Resources.red_circle;
+            this.btnExit.Location = new System.Drawing.Point(604, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(17, 17);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExit.TabIndex = 0;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panelShadow
             // 
-            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(59)))));
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(178, 66);
             this.panelShadow.Name = "panelShadow";
@@ -351,9 +334,9 @@ namespace DFlood
             // 
             // panelDesktop
             // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panelDesktop.Controls.Add(this.lblTime);
-            this.panelDesktop.Controls.Add(this.pictureBox1);
+            this.panelDesktop.Controls.Add(this.dfloodIcon);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(178, 75);
             this.panelDesktop.Name = "panelDesktop";
@@ -372,17 +355,16 @@ namespace DFlood
             this.lblTime.Text = "undefined";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // dfloodIcon
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox1.Image = global::DFlood.Properties.Resources.dflood;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 106);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.btnHome_Click);
+            this.dfloodIcon.Image = global::DFlood.Properties.Resources.dflood2;
+            this.dfloodIcon.Location = new System.Drawing.Point(91, 106);
+            this.dfloodIcon.Name = "dfloodIcon";
+            this.dfloodIcon.Size = new System.Drawing.Size(124, 123);
+            this.dfloodIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dfloodIcon.TabIndex = 0;
+            this.dfloodIcon.TabStop = false;
+            this.dfloodIcon.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // clock
             // 
@@ -399,10 +381,21 @@ namespace DFlood
             this.totalTimeCalculator.Interval = 1000;
             this.totalTimeCalculator.Tick += new System.EventHandler(this.totalTimeCalculator_Tick);
             // 
+            // fadeOpacity
+            // 
+            this.fadeOpacity.Interval = 20000;
+            this.fadeOpacity.Tick += new System.EventHandler(this.fadeOpacity_Tick);
+            // 
+            // fadeOpacity2
+            // 
+            this.fadeOpacity2.Interval = 40;
+            this.fadeOpacity2.Tick += new System.EventHandler(this.fadeOpacity2_Tick);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(847, 460);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
@@ -417,17 +410,16 @@ namespace DFlood
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelLogo.ResumeLayout(false);
-            this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVirusTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dfloodIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -442,22 +434,22 @@ namespace DFlood
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnCopyright;
         private System.Windows.Forms.PictureBox btnHome;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblTitleChildForm;
-        private Bunifu.Framework.UI.BunifuElipse formElipse;
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.PictureBox btnMinimize;
         private System.Windows.Forms.PictureBox btnVirusTotal;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox dfloodIcon;
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer TopMostChecker;
         private FontAwesome.Sharp.IconButton btnContact;
         private System.Windows.Forms.Timer totalTimeCalculator;
+        private System.Windows.Forms.Timer fadeOpacity;
+        private System.Windows.Forms.Timer fadeOpacity2;
     }
 }

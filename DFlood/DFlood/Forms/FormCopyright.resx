@@ -117,7 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 9pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>© 2019-2021 DFlood Tüm Hakları Saklıdır. All Rights Reserved.
+DFlood, hukuka, yasalara, telif haklarına ve kişilik haklarına saygılı olmayı amaç edinmiştir. 
+DFlood, 5651 sayılı yasada tanımlanan şekliyle “yer sağlayıcı” olarak hizmet vermektedir. 
+İlgili yasaya göre, 
+Telif hakkına konu olan eserlerin yasal olmayan bir biçimde paylaşıldığını ve yasal 
+haklarının çiğnendiğini düşünen hak sahipleri veya meslek birlikleri;
+
+omerhuseyingul@outlook.com
+mail adresinden bize ulaşabilirler. </value>
   </data>
 </root>

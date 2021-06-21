@@ -13,6 +13,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using Microsoft.VisualBasic.Devices;
 using DFlood.DFLoodDiscordRPC;
+using System.Timers;
 
 namespace DFlood
 {
@@ -59,11 +60,6 @@ namespace DFlood
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void splashScreen_Load(object sender, EventArgs e)
-        {
-            splashTimer.Start();
-        }
-
         [Obsolete]
         private void splashTimer_Tick_1(object sender, EventArgs e)
         {
@@ -108,6 +104,8 @@ namespace DFlood
 
         private void splashScreen_Load_1(object sender, EventArgs e)
         {
+            splashTimer.Start();
         }
+
     }
 }

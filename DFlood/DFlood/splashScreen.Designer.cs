@@ -43,15 +43,17 @@ namespace DFlood
             this.btnAbout = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.splashProgressBar = new Bunifu.UI.WinForms.BunifuProgressBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.formMover.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipse1
             // 
-            this.gunaElipse1.Radius = 10;
+            this.gunaElipse1.Radius = 15;
             this.gunaElipse1.TargetControl = this;
             // 
             // splashTimer
@@ -118,7 +120,7 @@ namespace DFlood
             // 
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.Image = global::DFlood.Properties.Resources.yellow_circle;
-            this.btnMinimize.Location = new System.Drawing.Point(33, 9);
+            this.btnMinimize.Location = new System.Drawing.Point(32, 9);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(17, 17);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +132,7 @@ namespace DFlood
             // 
             this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAbout.Image = global::DFlood.Properties.Resources.green_circle;
-            this.btnAbout.Location = new System.Drawing.Point(52, 9);
+            this.btnAbout.Location = new System.Drawing.Point(50, 9);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(17, 17);
             this.btnAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,12 +177,23 @@ namespace DFlood
             this.splashProgressBar.Value = 0;
             this.splashProgressBar.ValueByTransition = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DFlood.Properties.Resources.dflood2;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // splashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(15)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(464, 216);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.formMover);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -198,6 +211,7 @@ namespace DFlood
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +230,6 @@ namespace DFlood
         private System.Windows.Forms.PictureBox btnMinimize;
         private System.Windows.Forms.PictureBox btnAbout;
         private System.Windows.Forms.PictureBox btnExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

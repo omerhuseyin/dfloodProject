@@ -29,7 +29,7 @@ namespace DFlood
         private OpenFileDialog ofd = new OpenFileDialog();
         private OperatingSystem OS = System.Environment.OSVersion;
         private DateTime today = DateTime.Now;
-        private int topTimeDeletes, topTimeFloods, totalTimes;
+        private int topTimeDeletes, topTimeFloods, mode;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -79,6 +79,16 @@ namespace DFlood
             topTimeFloods = topTimeFloods + 1;
 
             messageSendInterval = rnd.Next(min, max);
+        }
+
+        private void btnModeChanger_Click(object sender, EventArgs e)
+        {
+            mode = mode + 1;
+            if (mode % 2 == 1)
+            {
+                btnModeChanger.Text = "OwO Modu";
+                btnModeChanger.Image = Properties.Resources.owomod;
+            }
         }
 
         private void dataChecker_Tick(object sender, EventArgs e)
