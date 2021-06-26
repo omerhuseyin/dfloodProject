@@ -29,7 +29,10 @@ namespace DFlood
         private OpenFileDialog ofd = new OpenFileDialog();
         private OperatingSystem OS = System.Environment.OSVersion;
         private DateTime today = DateTime.Now;
-        private int topTimeDeletes, topTimeFloods, mode;
+        private int topTimeDeletes, topTimeFloods, mode = 0;
+        private bool cashIsSend = false;
+        private int cowoncy;
+        private int whtime = 17;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -41,6 +44,64 @@ namespace DFlood
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void OwOMode()
+        {
+            if (cashIsSend == false)
+            {
+                SendKeys.Send("w cash");
+                SendKeys.Send("{ENTER}");
+                btnOk.Visible = true;
+            }
+            cashIsSend = true;
+            txtFilePath.Enabled = true;
+        }
+
+        private void HuntMode()
+        {
+            whtime = whtime - 1;
+            if (whtime == 0)
+            {
+                SendKeys.Send("wh");
+                SendKeys.Send("{ENTER}");
+                whtime = 17;
+            }
+        }
+
+        private void RankMode()
+        {
+            messageSendInterval = messageSendInterval - 1;
+
+            if (messageSendInterval == 0)
+            {
+                if (Properties.Settings.Default.IsUnlimitedFloodMode == true)
+                {
+                    if (Properties.Settings.Default.IsDeleteAfterMode == true)
+                    {
+                        MessageDeleteEventListener();
+                    }
+                    FloodService();
+                }
+                else if (Properties.Settings.Default.IsUnlimitedFloodMode == false)
+                {
+                    floodCount = floodCount + 1;
+                    if (floodCount == Properties.Settings.Default.FloodCount)
+                    {
+                        messageTimer.Stop();
+                    }
+
+                    if (Properties.Settings.Default.IsDeleteAfterMode == true)
+                    {
+                        MessageDeleteEventListener();
+                        FloodService();
+                    }
+                    else
+                    {
+                        FloodService();
+                    }
+                }
+            }
         }
 
         private static void sendWebHook(string Url, string msg, string Username)
@@ -84,11 +145,38 @@ namespace DFlood
         private void btnModeChanger_Click(object sender, EventArgs e)
         {
             mode = mode + 1;
-            if (mode % 2 == 1)
+            if (mode == 1)
             {
                 btnModeChanger.Text = "OwO Modu";
                 btnModeChanger.Image = Properties.Resources.owomod;
+                lblFloodMode.Text = "OwO Modu\nLütfen Yeni Açtığımız Pencereye Cash Miktarınızı Giriniz";
+                txtFilePath.Enabled = false;
+                btnStartService.Enabled = true;
             }
+            else if (mode == 2)
+            {
+                btnModeChanger.Text = "Av Modu";
+                btnModeChanger.Image = Properties.Resources.hunt;
+                lblFloodMode.Text = "DFlood Av Modu\n17 Saniye Aralıkla Wh Atar";
+                txtFilePath.Enabled = false;
+                btnStartService.Enabled = true;
+            }
+            else if (mode == 3)
+            {
+                btnModeChanger.Text = "Rank Modu";
+                btnModeChanger.Image = Properties.Resources.rank;
+                lblFloodMode.Text = "DFlood Rank Modu\nMetin Dosyasının İçeri Aktarılması Bekleniyor..";
+                mode = 0;
+                txtFilePath.Enabled = false;
+                btnStartService.Enabled = false;
+            }
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            cowoncy = Convert.ToInt32(txtFilePath.Text);
+            btnOk.Visible = false;
+            this.Alert("Başarılı", "Cowoncy Miktarın Tanımlandı", Form_Alert.enmType.cwncy);
         }
 
         private void dataChecker_Tick(object sender, EventArgs e)
@@ -114,36 +202,19 @@ namespace DFlood
 
         private void messageTimer_Tick(object sender, EventArgs e)
         {
-            messageSendInterval = messageSendInterval - 1;
-
-            if (messageSendInterval == 0)
+            if (mode == 1)
             {
-                if (Properties.Settings.Default.IsUnlimitedFloodMode == true)
-                {
-                    if (Properties.Settings.Default.IsDeleteAfterMode == true)
-                    {
-                        MessageDeleteEventListener();
-                    }
-                    FloodService();
-                }
-                else if (Properties.Settings.Default.IsUnlimitedFloodMode == false)
-                {
-                    floodCount = floodCount + 1;
-                    if (floodCount == Properties.Settings.Default.FloodCount)
-                    {
-                        messageTimer.Stop();
-                    }
+                OwOMode();
+            }
 
-                    if (Properties.Settings.Default.IsDeleteAfterMode == true)
-                    {
-                        MessageDeleteEventListener();
-                        FloodService();
-                    }
-                    else
-                    {
-                        FloodService();
-                    }
-                }
+            if (mode == 0)
+            {
+                RankMode();
+            }
+
+            if (mode == 2)
+            {
+                HuntMode();
             }
         }
 
@@ -159,8 +230,9 @@ namespace DFlood
             startStopCounter = startStopCounter + 1;
             if (startStopCounter % 2 == 1)
             {
+                btnStartService.Image = Properties.Resources.stop;
                 snd.SoundLocation = "openSound.wav";
-                btnStartService.Text = "Hizmeti Durdur";
+                btnStartService.Text = "Durdur";
                 snd.Play();
                 txtFilePath.Enabled = false;
                 btnImport.Enabled = false;
@@ -169,13 +241,15 @@ namespace DFlood
             }
             else if (startStopCounter % 2 == 0)
             {
+                btnStartService.Image = Properties.Resources.play;
                 Properties.Settings.Default.Save();
                 snd.SoundLocation = "success.wav";
-                btnStartService.Text = "Hizmeti Başlat";
+                btnStartService.Text = "Başlat";
                 snd.Play();
                 this.Alert("Başarılı", "Flood Hizmeti Durduruldu", Form_Alert.enmType.Warning);
                 startStopCounter = 0;
                 messageTimer.Stop();
+                btnImport.Enabled = true;
             }
         }
 

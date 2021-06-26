@@ -377,5 +377,33 @@
   <ItemGroup>
     <None Include="Resources\owomod.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hunt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cursors\discordClick.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cursors\dflood.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

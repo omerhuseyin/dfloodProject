@@ -31,7 +31,8 @@ namespace DFlood
             Warning,
             Error,
             Info,
-            SecurePoint
+            SecurePoint,
+            cwncy
         }
 
         private Form_Alert.enmAction action;
@@ -85,6 +86,11 @@ namespace DFlood
                 case enmType.SecurePoint:
                     this.pictureBox2.Image = Resources.securitypoint_50px;
                     this.BackColor = Color.Aqua;
+                    break;
+
+                case enmType.cwncy:
+                    this.pictureBox2.Image = Resources.money;
+                    this.BackColor = Color.Green;
                     break;
             }
 

@@ -85,6 +85,7 @@ namespace DFlood
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(178, 460);
             this.panelMenu.TabIndex = 0;
+            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
             // 
             // btnContact
             // 
@@ -107,6 +108,7 @@ namespace DFlood
             this.btnContact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnContact.UseVisualStyleBackColor = true;
             this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
+            this.btnContact.MouseEnter += new System.EventHandler(this.btnContact_MouseEnter);
             // 
             // label2
             // 
@@ -140,6 +142,7 @@ namespace DFlood
             this.btnCopyright.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCopyright.UseVisualStyleBackColor = true;
             this.btnCopyright.Click += new System.EventHandler(this.btnCopyright_Click);
+            this.btnCopyright.MouseEnter += new System.EventHandler(this.btnCopyright_MouseEnter);
             // 
             // btnSponsoredServers
             // 
@@ -162,6 +165,7 @@ namespace DFlood
             this.btnSponsoredServers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSponsoredServers.UseVisualStyleBackColor = true;
             this.btnSponsoredServers.Click += new System.EventHandler(this.btnSponsoredServers_Click);
+            this.btnSponsoredServers.MouseEnter += new System.EventHandler(this.btnSponsoredServers_MouseEnter);
             // 
             // btnSettings
             // 
@@ -184,6 +188,7 @@ namespace DFlood
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.MouseEnter += new System.EventHandler(this.btnSettings_MouseEnter);
             // 
             // btnServiceStarter
             // 
@@ -206,6 +211,7 @@ namespace DFlood
             this.btnServiceStarter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnServiceStarter.UseVisualStyleBackColor = true;
             this.btnServiceStarter.Click += new System.EventHandler(this.btnServiceStarter_Click);
+            this.btnServiceStarter.MouseEnter += new System.EventHandler(this.btnServiceStarter_MouseEnter);
             // 
             // btnStats
             // 
@@ -228,6 +234,7 @@ namespace DFlood
             this.btnStats.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStats.UseVisualStyleBackColor = true;
             this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            this.btnStats.MouseEnter += new System.EventHandler(this.btnStats_MouseEnter);
             // 
             // panelLogo
             // 
@@ -237,6 +244,7 @@ namespace DFlood
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(178, 100);
             this.panelLogo.TabIndex = 1;
+            this.panelLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
             // 
             // btnHome
             // 
@@ -249,6 +257,7 @@ namespace DFlood
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnHome.MouseEnter += new System.EventHandler(this.btnHome_MouseEnter);
             // 
             // panelTitleBar
             // 
@@ -264,6 +273,7 @@ namespace DFlood
             this.panelTitleBar.Size = new System.Drawing.Size(669, 66);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            this.panelTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
             // 
             // btnVirusTotal
             // 
@@ -275,6 +285,7 @@ namespace DFlood
             this.btnVirusTotal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnVirusTotal.TabIndex = 2;
             this.btnVirusTotal.TabStop = false;
+            this.btnVirusTotal.Click += new System.EventHandler(this.btnVirusTotal_Click);
             // 
             // btnMinimize
             // 
@@ -286,6 +297,8 @@ namespace DFlood
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimize.TabIndex = 0;
             this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.btnMinimize.MouseEnter += new System.EventHandler(this.btnMinimize_MouseEnter);
             // 
             // lblTitleChildForm
             // 
@@ -323,6 +336,7 @@ namespace DFlood
             this.btnExit.TabIndex = 0;
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.MouseEnter += new System.EventHandler(this.btnExit_MouseEnter);
             // 
             // panelShadow
             // 
@@ -343,6 +357,7 @@ namespace DFlood
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(669, 385);
             this.panelDesktop.TabIndex = 3;
+            this.panelDesktop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
             // 
             // lblTime
             // 
@@ -413,6 +428,7 @@ namespace DFlood
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ana Sayfa";
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelLogo.ResumeLayout(false);

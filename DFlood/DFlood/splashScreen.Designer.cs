@@ -77,11 +77,11 @@ namespace DFlood
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 171);
+            this.label2.Location = new System.Drawing.Point(24, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 15);
+            this.label2.Size = new System.Drawing.Size(82, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "powered by qSoft.dev";
+            this.label2.Text = "coded by wés";
             // 
             // label3
             // 
@@ -201,6 +201,7 @@ namespace DFlood
             this.Controls.Add(this.splashProgressBar);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "splashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

