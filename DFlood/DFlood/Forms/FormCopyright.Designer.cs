@@ -67,6 +67,7 @@ namespace DFlood.Forms
             this.Controls.Add(this.label1);
             this.Name = "FormCopyright";
             this.Text = "Yasal Uyarı";
+            this.MouseEnter += new System.EventHandler(this.FormCopyright_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

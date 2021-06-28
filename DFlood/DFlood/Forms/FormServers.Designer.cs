@@ -149,6 +149,7 @@ namespace DFlood.Forms
             this.Controls.Add(this.label1);
             this.Name = "FormServers";
             this.Text = "Sponsorlar";
+            this.MouseEnter += new System.EventHandler(this.FormServers_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).EndInit();
             this.bunifuGradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

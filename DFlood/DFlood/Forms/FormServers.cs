@@ -21,5 +21,10 @@ namespace DFlood.Forms
         {
             System.Diagnostics.Process.Start("https://discord.com/invite/dkkkDwVAhN");
         }
+
+        private void FormServers_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
+        }
     }
 }

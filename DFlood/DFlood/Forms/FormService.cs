@@ -179,6 +179,11 @@ namespace DFlood
             this.Alert("Başarılı", "Cowoncy Miktarın Tanımlandı", Form_Alert.enmType.cwncy);
         }
 
+        private void main_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
+        }
+
         private void dataChecker_Tick(object sender, EventArgs e)
         {
             Properties.Settings.Default.TopTimeFloods = topTimeFloods;

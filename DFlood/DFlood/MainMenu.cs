@@ -307,36 +307,6 @@ namespace DFlood
             this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
         }
 
-        private void btnStats_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
-
-        private void btnServiceStarter_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
-
-        private void btnSettings_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
-
-        private void btnSponsoredServers_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
-
-        private void btnCopyright_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
-
-        private void btnContact_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -347,19 +317,10 @@ namespace DFlood
             System.Diagnostics.Process.Start("https://www.virustotal.com/gui/file/596140e5c37ee20a6c9b17ee77dcdae75f9103651dee1b677d02927d5e352615/detection");
         }
 
-        private void btnExit_MouseEnter(object sender, EventArgs e)
+        private void btnStats_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
 
-        private void btnMinimize_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-        }
-
-        private void btnHome_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
         }
     }
 }

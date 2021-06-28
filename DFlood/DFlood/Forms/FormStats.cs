@@ -27,5 +27,10 @@ namespace DFlood.Forms
             lblTotalFloods.Text = $"{Properties.Settings.Default.TopTimeFloods} Mesaj";
             lblTotalTimes.Text = $"{Properties.Settings.Default.TopTimeSeconds} Saniye";
         }
+
+        private void FormStats_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
+        }
     }
 }

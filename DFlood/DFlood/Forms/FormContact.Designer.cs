@@ -123,6 +123,7 @@ namespace DFlood.Forms
             this.Name = "FormContact";
             this.Text = "Bize Ulaşın";
             this.Load += new System.EventHandler(this.FormContact_Load);
+            this.MouseEnter += new System.EventHandler(this.FormContact_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

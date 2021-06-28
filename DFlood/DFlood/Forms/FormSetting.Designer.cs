@@ -512,6 +512,7 @@ namespace DFlood.Forms
             this.Name = "FormSetting";
             this.Text = "Ayarlar";
             this.Load += new System.EventHandler(this.FormSetting_Load);
+            this.MouseEnter += new System.EventHandler(this.FormSetting_MouseEnter);
             this.grpSendSettings.ResumeLayout(false);
             this.grpSendSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SenderFloodCount)).EndInit();

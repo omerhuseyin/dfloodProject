@@ -163,6 +163,7 @@ namespace DFlood.Forms
             this.Name = "FormStats";
             this.Text = "DFlood İstatistikleri";
             this.Load += new System.EventHandler(this.FormStats_Load);
+            this.MouseEnter += new System.EventHandler(this.FormStats_MouseEnter);
             this.bunifuGradientPanel3.ResumeLayout(false);
             this.bunifuGradientPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

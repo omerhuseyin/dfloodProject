@@ -111,6 +111,11 @@ namespace DFlood.Forms
             }
         }
 
+        private void FormSetting_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
+        }
+
         private void SetUnlimitedFlood_CheckedChanged(object sender, EventArgs e)
         {
             bootUnlmtd = bootUnlmtd + 1;

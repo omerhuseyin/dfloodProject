@@ -20,5 +20,10 @@ namespace DFlood.Forms
         private void FormContact_Load(object sender, EventArgs e)
         {
         }
+
+        private void FormContact_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
+        }
     }
 }

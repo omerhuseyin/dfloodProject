@@ -35,28 +35,28 @@ namespace DFlood
             this.messageTimer = new System.Windows.Forms.Timer(this.components);
             this.lblFloodMode = new System.Windows.Forms.Label();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
+            this.btnOk = new Siticone.UI.WinForms.SiticoneImageButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtFilePath = new Guna.UI.WinForms.GunaTextBox();
             this.keywords = new System.Windows.Forms.ListBox();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.messageDeleteTimer = new System.Windows.Forms.Timer(this.components);
             this.dataChecker = new System.Windows.Forms.Timer(this.components);
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnModeChanger = new Siticone.UI.WinForms.SiticoneRoundedGradientButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnImport = new Siticone.UI.WinForms.SiticoneRoundedGradientButton();
             this.btnStartService = new Siticone.UI.WinForms.SiticoneRoundedGradientButton();
-            this.btnOk = new Siticone.UI.WinForms.SiticoneImageButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gunaGroupBox1.SuspendLayout();
-            this.gunaGroupBox5.SuspendLayout();
-            this.gunaGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gunaGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.gunaGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +93,40 @@ namespace DFlood
             this.gunaGroupBox1.TabIndex = 6;
             this.gunaGroupBox1.Text = "Veri Girişi";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(285, 7);
+            // 
+            // btnOk
+            // 
+            this.btnOk.CheckedState.Parent = this.btnOk;
+            this.btnOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOk.HoveredState.Parent = this.btnOk;
+            this.btnOk.Image = global::DFlood.Properties.Resources.success_50px;
+            this.btnOk.Location = new System.Drawing.Point(447, 97);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.PressedState.Parent = this.btnOk;
+            this.btnOk.Size = new System.Drawing.Size(36, 25);
+            this.btnOk.TabIndex = 14;
+            this.btnOk.Visible = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::DFlood.Properties.Resources.input;
+            this.pictureBox3.Location = new System.Drawing.Point(257, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(26, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DFlood.Properties.Resources.txt;
+            this.pictureBox1.Location = new System.Drawing.Point(149, 94);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // txtFilePath
             // 
@@ -146,6 +180,16 @@ namespace DFlood
             this.gunaGroupBox5.Text = "Kelime Listesi";
             this.gunaGroupBox5.TextLocation = new System.Drawing.Point(80, 7);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::DFlood.Properties.Resources.list;
+            this.pictureBox5.Location = new System.Drawing.Point(56, 4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 13;
+            this.pictureBox5.TabStop = false;
+            // 
             // messageDeleteTimer
             // 
             this.messageDeleteTimer.Interval = 1000;
@@ -172,16 +216,6 @@ namespace DFlood
             this.gunaGroupBox2.TabIndex = 6;
             this.gunaGroupBox2.Text = "Fonksiyonlar";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(150, 7);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::DFlood.Properties.Resources.list;
-            this.pictureBox5.Location = new System.Drawing.Point(56, 4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 13;
-            this.pictureBox5.TabStop = false;
             // 
             // btnModeChanger
             // 
@@ -251,40 +285,6 @@ namespace DFlood
             this.btnStartService.Text = "Başlat";
             this.btnStartService.Click += new System.EventHandler(this.btnStartService_Click);
             // 
-            // btnOk
-            // 
-            this.btnOk.CheckedState.Parent = this.btnOk;
-            this.btnOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOk.HoveredState.Parent = this.btnOk;
-            this.btnOk.Image = global::DFlood.Properties.Resources.success_50px;
-            this.btnOk.Location = new System.Drawing.Point(447, 97);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.PressedState.Parent = this.btnOk;
-            this.btnOk.Size = new System.Drawing.Size(36, 25);
-            this.btnOk.TabIndex = 14;
-            this.btnOk.Visible = false;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DFlood.Properties.Resources.input;
-            this.pictureBox3.Location = new System.Drawing.Point(257, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DFlood.Properties.Resources.txt;
-            this.pictureBox1.Location = new System.Drawing.Point(149, 94);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DFlood.Properties.Resources.rgbline;
@@ -314,13 +314,14 @@ namespace DFlood
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servis Başlatıcısı";
             this.Load += new System.EventHandler(this.main_Load);
+            this.MouseEnter += new System.EventHandler(this.main_MouseEnter);
             this.gunaGroupBox1.ResumeLayout(false);
-            this.gunaGroupBox5.ResumeLayout(false);
-            this.gunaGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gunaGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.gunaGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 

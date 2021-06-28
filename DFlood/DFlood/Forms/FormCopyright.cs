@@ -16,5 +16,11 @@ namespace DFlood.Forms
         {
             InitializeComponent();
         }
+
+
+        private void FormCopyright_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\dflood.ico");
+        }
     }
 }

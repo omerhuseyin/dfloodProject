@@ -108,7 +108,7 @@ namespace DFlood
             this.btnContact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnContact.UseVisualStyleBackColor = true;
             this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
-            this.btnContact.MouseEnter += new System.EventHandler(this.btnContact_MouseEnter);
+            this.btnContact.MouseEnter += new System.EventHandler(this.btnStats_MouseEnter);
             // 
             // label2
             // 
@@ -117,7 +117,7 @@ namespace DFlood
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(48, 435);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.Size = new System.Drawing.Size(82, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "© DFlood 2021";
             // 
@@ -142,7 +142,7 @@ namespace DFlood
             this.btnCopyright.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCopyright.UseVisualStyleBackColor = true;
             this.btnCopyright.Click += new System.EventHandler(this.btnCopyright_Click);
-            this.btnCopyright.MouseEnter += new System.EventHandler(this.btnCopyright_MouseEnter);
+            this.btnCopyright.MouseEnter += new System.EventHandler(this.btnStats_MouseEnter);
             // 
             // btnSponsoredServers
             // 
@@ -165,7 +165,7 @@ namespace DFlood
             this.btnSponsoredServers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSponsoredServers.UseVisualStyleBackColor = true;
             this.btnSponsoredServers.Click += new System.EventHandler(this.btnSponsoredServers_Click);
-            this.btnSponsoredServers.MouseEnter += new System.EventHandler(this.btnSponsoredServers_MouseEnter);
+            this.btnSponsoredServers.MouseEnter += new System.EventHandler(this.btnStats_MouseEnter);
             // 
             // btnSettings
             // 
@@ -188,7 +188,7 @@ namespace DFlood
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            this.btnSettings.MouseEnter += new System.EventHandler(this.btnSettings_MouseEnter);
+            this.btnSettings.MouseEnter += new System.EventHandler(this.btnStats_MouseEnter);
             // 
             // btnServiceStarter
             // 
@@ -211,7 +211,7 @@ namespace DFlood
             this.btnServiceStarter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnServiceStarter.UseVisualStyleBackColor = true;
             this.btnServiceStarter.Click += new System.EventHandler(this.btnServiceStarter_Click);
-            this.btnServiceStarter.MouseEnter += new System.EventHandler(this.btnServiceStarter_MouseEnter);
+            this.btnServiceStarter.MouseEnter += new System.EventHandler(this.btnStats_MouseEnter);
             // 
             // btnStats
             // 
@@ -257,7 +257,6 @@ namespace DFlood
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            this.btnHome.MouseEnter += new System.EventHandler(this.btnHome_MouseEnter);
             // 
             // panelTitleBar
             // 
@@ -298,7 +297,6 @@ namespace DFlood
             this.btnMinimize.TabIndex = 0;
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            this.btnMinimize.MouseEnter += new System.EventHandler(this.btnMinimize_MouseEnter);
             // 
             // lblTitleChildForm
             // 
@@ -336,7 +334,6 @@ namespace DFlood
             this.btnExit.TabIndex = 0;
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            this.btnExit.MouseEnter += new System.EventHandler(this.btnExit_MouseEnter);
             // 
             // panelShadow
             // 
