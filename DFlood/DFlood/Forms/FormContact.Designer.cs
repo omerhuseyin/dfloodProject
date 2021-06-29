@@ -61,11 +61,11 @@ namespace DFlood.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(249, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 21);
+            this.label1.Size = new System.Drawing.Size(161, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Omer Huseyin GUL";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,34 +77,37 @@ namespace DFlood.Forms
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(276, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 16);
+            this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Yazılım Mühendisi";
+            this.label2.Text = "Yazılım Geliştiricisi";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::DFlood.Properties.Resources.github;
-            this.pictureBox5.Location = new System.Drawing.Point(347, 172);
+            this.pictureBox5.Location = new System.Drawing.Point(340, 177);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 30);
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::DFlood.Properties.Resources.instagram;
-            this.pictureBox4.Location = new System.Drawing.Point(273, 172);
+            this.pictureBox4.Location = new System.Drawing.Point(280, 177);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::DFlood.Properties.Resources.twitter;
-            this.pictureBox3.Location = new System.Drawing.Point(309, 172);
+            this.pictureBox3.Location = new System.Drawing.Point(310, 177);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox3.Size = new System.Drawing.Size(24, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
