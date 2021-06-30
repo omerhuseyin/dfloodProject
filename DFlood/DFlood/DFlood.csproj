@@ -162,12 +162,6 @@
     </Compile>
     <Compile Include="DFLoodDiscordRPC\Discord.cs" />
     <Compile Include="DiscordSocketClient.cs" />
-    <Compile Include="Forms\FormAboutSoftware.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormAboutSoftware.Designer.cs">
-      <DependentUpon>FormAboutSoftware.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,9 +230,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\FormAboutSoftware.resx">
-      <DependentUpon>FormAboutSoftware.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormContact.resx">
       <DependentUpon>FormContact.cs</DependentUpon>
     </EmbeddedResource>
