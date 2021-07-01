@@ -52,9 +52,9 @@ namespace DFlood.Forms
             this.bunifuLabel1.Location = new System.Drawing.Point(206, 317);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(260, 17);
+            this.bunifuLabel1.Size = new System.Drawing.Size(267, 17);
             this.bunifuLabel1.TabIndex = 1;
-            this.bunifuLabel1.Text = "Copyright 2021 qSoft.org | Her Hakkı Saklıdır";
+            this.bunifuLabel1.Text = "Copyright 2021 -  qSoft.org | Her Hakkı Saklıdır";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
