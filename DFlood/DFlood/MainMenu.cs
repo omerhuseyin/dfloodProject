@@ -283,15 +283,6 @@ namespace DFlood
             Properties.Settings.Default.Save();
         }
 
-        private void fadeOpacity_Tick(object sender, EventArgs e)
-        {
-            if (Opacity == 1)
-            {
-                fadeOpacity.Stop();
-            }
-            Opacity += .2;
-        }
-
         private void fadeOpacity2_Tick(object sender, EventArgs e)
         {
             if (Opacity == 0)
@@ -320,7 +311,6 @@ namespace DFlood
         private void btnStats_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\Cursors\\discordClick.ico");
-
         }
     }
 }

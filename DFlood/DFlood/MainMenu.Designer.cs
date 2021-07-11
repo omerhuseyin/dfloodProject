@@ -117,7 +117,7 @@ namespace DFlood
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(48, 435);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "© DFlood 2021";
             // 
@@ -393,11 +393,6 @@ namespace DFlood
             // 
             this.totalTimeCalculator.Interval = 1000;
             this.totalTimeCalculator.Tick += new System.EventHandler(this.totalTimeCalculator_Tick);
-            // 
-            // fadeOpacity
-            // 
-            this.fadeOpacity.Interval = 20000;
-            this.fadeOpacity.Tick += new System.EventHandler(this.fadeOpacity_Tick);
             // 
             // fadeOpacity2
             // 

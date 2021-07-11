@@ -54,9 +54,7 @@ namespace DFlood.Forms
             this.langUs = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.langTr = new System.Windows.Forms.PictureBox();
-            this.AutoSave = new Siticone.UI.WinForms.SiticoneOSToggleSwith();
             this.DiscordTaskChecker = new Siticone.UI.WinForms.SiticoneOSToggleSwith();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.SettingController = new System.Windows.Forms.Timer(this.components);
             this.grpSendSettings.SuspendLayout();
@@ -414,9 +412,7 @@ namespace DFlood.Forms
             this.gunaGroupBox2.Controls.Add(this.langUs);
             this.gunaGroupBox2.Controls.Add(this.label9);
             this.gunaGroupBox2.Controls.Add(this.langTr);
-            this.gunaGroupBox2.Controls.Add(this.AutoSave);
             this.gunaGroupBox2.Controls.Add(this.DiscordTaskChecker);
-            this.gunaGroupBox2.Controls.Add(this.label8);
             this.gunaGroupBox2.Controls.Add(this.label10);
             this.gunaGroupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gunaGroupBox2.ForeColor = System.Drawing.Color.White;
@@ -432,9 +428,9 @@ namespace DFlood.Forms
             // 
             this.langUs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.langUs.Image = global::DFlood.Properties.Resources.usaflag;
-            this.langUs.Location = new System.Drawing.Point(178, 100);
+            this.langUs.Location = new System.Drawing.Point(185, 88);
             this.langUs.Name = "langUs";
-            this.langUs.Size = new System.Drawing.Size(33, 33);
+            this.langUs.Size = new System.Drawing.Size(27, 27);
             this.langUs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.langUs.TabIndex = 11;
             this.langUs.TabStop = false;
@@ -442,7 +438,7 @@ namespace DFlood.Forms
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(40, 107);
+            this.label9.Location = new System.Drawing.Point(53, 93);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 17);
             this.label9.TabIndex = 10;
@@ -452,44 +448,26 @@ namespace DFlood.Forms
             // 
             this.langTr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.langTr.Image = global::DFlood.Properties.Resources.trflag;
-            this.langTr.Location = new System.Drawing.Point(133, 100);
+            this.langTr.Location = new System.Drawing.Point(152, 88);
             this.langTr.Name = "langTr";
-            this.langTr.Size = new System.Drawing.Size(33, 33);
+            this.langTr.Size = new System.Drawing.Size(27, 27);
             this.langTr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.langTr.TabIndex = 9;
             this.langTr.TabStop = false;
             // 
-            // AutoSave
-            // 
-            this.AutoSave.Location = new System.Drawing.Point(220, 71);
-            this.AutoSave.Name = "AutoSave";
-            this.AutoSave.Size = new System.Drawing.Size(26, 17);
-            this.AutoSave.TabIndex = 5;
-            this.AutoSave.Text = "siticoneOSToggleSwith1";
-            this.AutoSave.CheckedChanged += new System.EventHandler(this.AutoSave_CheckedChanged);
-            // 
             // DiscordTaskChecker
             // 
-            this.DiscordTaskChecker.Location = new System.Drawing.Point(220, 47);
+            this.DiscordTaskChecker.Location = new System.Drawing.Point(200, 52);
             this.DiscordTaskChecker.Name = "DiscordTaskChecker";
             this.DiscordTaskChecker.Size = new System.Drawing.Size(26, 17);
             this.DiscordTaskChecker.TabIndex = 8;
             this.DiscordTaskChecker.Text = "siticoneOSToggleSwith1";
             this.DiscordTaskChecker.CheckedChanged += new System.EventHandler(this.DiscordTaskChecker_CheckedChanged);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(158, 17);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Otomatik Ayar Kaydetme";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(39, 46);
+            this.label10.Location = new System.Drawing.Point(53, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(132, 17);
             this.label10.TabIndex = 6;
@@ -545,9 +523,7 @@ namespace DFlood.Forms
         private System.Windows.Forms.Label label7;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
         public Siticone.UI.WinForms.SiticoneOSToggleSwith DiscordTaskChecker;
-        public Siticone.UI.WinForms.SiticoneOSToggleSwith AutoSave;
         public Guna.UI.WinForms.GunaCheckBox MessageDeleteAfter;
         public Siticone.UI.WinForms.SiticoneRoundedNumericUpDown MessageDeleteInterval;
         public System.Windows.Forms.Label label3;

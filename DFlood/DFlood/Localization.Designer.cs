@@ -59,5 +59,77 @@ namespace DFlood {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bize Ulaşın.
+        /// </summary>
+        internal static string btnContact {
+            get {
+                return ResourceManager.GetString("btnContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yasal Uyarı.
+        /// </summary>
+        internal static string btnCopyright {
+            get {
+                return ResourceManager.GetString("btnCopyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Servis Başlatıcısı.
+        /// </summary>
+        internal static string btnServiceStarter {
+            get {
+                return ResourceManager.GetString("btnServiceStarter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ayarlar.
+        /// </summary>
+        internal static string btnSettings {
+            get {
+                return ResourceManager.GetString("btnSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sponsorlar.
+        /// </summary>
+        internal static string btnSponsoredServers {
+            get {
+                return ResourceManager.GetString("btnSponsoredServers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İstatistikler.
+        /// </summary>
+        internal static string btnStats {
+            get {
+                return ResourceManager.GetString("btnStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hoşgeldin {System.Windows.Forms.SystemInformation.UserName}\n\n{DateTime.Now.ToLongTimeString()}\n{DateTime.Now.ToLongDateString()}.
+        /// </summary>
+        internal static string lblTime {
+            get {
+                return ResourceManager.GetString("lblTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ana Sayfa.
+        /// </summary>
+        internal static string lblTitleChildForm {
+            get {
+                return ResourceManager.GetString("lblTitleChildForm", resourceCulture);
+            }
+        }
     }
 }

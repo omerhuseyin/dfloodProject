@@ -55,7 +55,6 @@ namespace DFlood.Forms
             SetTopMost.Checked = Properties.Settings.Default.IsTopMostMode;
             SetSecurityPoint.Checked = Properties.Settings.Default.IsSecurityPointMode;
             DiscordTaskChecker.Checked = Properties.Settings.Default.IsDiscordChecker;
-            AutoSave.Checked = Properties.Settings.Default.IsAutoSave;
             MessageDeleteAfter.Checked = Properties.Settings.Default.IsDeleteAfterMode;
             MinSenderInterval.Value = Properties.Settings.Default.MinimumSenderInterval;
             MaxSenderInterval.Value = Properties.Settings.Default.MaximumSenderInterval;
@@ -70,7 +69,6 @@ namespace DFlood.Forms
             Properties.Settings.Default.IsTopMostMode = SetTopMost.Checked;
             Properties.Settings.Default.IsSecurityPointMode = SetSecurityPoint.Checked;
             Properties.Settings.Default.IsDiscordChecker = DiscordTaskChecker.Checked;
-            Properties.Settings.Default.IsAutoSave = AutoSave.Checked;
             Properties.Settings.Default.IsDeleteAfterMode = MessageDeleteAfter.Checked;
             Properties.Settings.Default.MaximumSenderInterval = Convert.ToByte(MaxSenderInterval.Value);
             Properties.Settings.Default.MinimumSenderInterval = Convert.ToByte(MinSenderInterval.Value);
@@ -179,26 +177,6 @@ namespace DFlood.Forms
             }
         }
 
-        private void AutoSave_CheckedChanged(object sender, EventArgs e)
-        {
-            bootAutoSave = bootAutoSave + 1;
-
-            if (bootAutoSave > 1)
-            {
-                snd.SoundLocation = "openSound.wav";
-                snd.Play();
-                if (AutoSave.Checked == true)
-                {
-                    this.TopMost = true;
-                    this.Alert("Başarılı", "Otomatik Ayar Kaydetme Açık", Form_Alert.enmType.Success);
-                }
-                else if (AutoSave.Checked == false)
-                {
-                    this.TopMost = false;
-                    this.Alert("Başarılı", "Otomatik Ayar Kaydetme Kapatıldı", Form_Alert.enmType.Warning);
-                }
-            }
-        }
 
         private void MessageDeleteAfter_CheckedChanged(object sender, EventArgs e)
         {
